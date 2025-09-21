@@ -1,0 +1,9 @@
+node_modules
+npm-debug.log
+generated-pdfs
+.git
+.gitignore
+.env.example
+README.md
+test
+.DS_Store
