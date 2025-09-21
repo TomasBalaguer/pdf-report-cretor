@@ -2,6 +2,7 @@ const puppeteer = require('puppeteer');
 const handlebars = require('handlebars');
 const fs = require('fs-extra');
 const path = require('path');
+const { execSync } = require('child_process');
 
 const chartGenerator = require('./chartGenerator');
 const { agruparCompetencias } = require('./validator');
@@ -22,6 +23,43 @@ handlebars.registerHelper('if', function(conditional, options) {
     return options.inverse(this);
   }
 });
+
+/**
+ * Detecta la ruta del ejecutable de Chromium
+ * @returns {String|null} - Ruta del ejecutable o null si no se encuentra
+ */
+function findChromiumExecutable() {
+  const possiblePaths = [
+    '/usr/bin/chromium-browser',
+    '/usr/bin/chromium',
+    '/usr/bin/google-chrome-stable',
+    '/usr/bin/google-chrome',
+    '/opt/google/chrome/chrome',
+    '/app/.apt/usr/bin/google-chrome',
+    process.env.PUPPETEER_EXECUTABLE_PATH
+  ];
+
+  // Intenta encontrar chromium con which
+  try {
+    const chromiumPath = execSync('which chromium || which chromium-browser || which google-chrome-stable || which google-chrome', { encoding: 'utf8' }).trim();
+    if (chromiumPath) {
+      console.log('✅ Chromium encontrado en:', chromiumPath);
+      return chromiumPath;
+    }
+  } catch (e) {
+    // Si which falla, continuar con las rutas predefinidas
+  }
+
+  // Buscar en rutas predefinidas
+  for (const chromePath of possiblePaths) {
+    if (chromePath && fs.existsSync(chromePath)) {
+      console.log('✅ Chromium encontrado en:', chromePath);
+      return chromePath;
+    }
+  }
+
+  return null;
+}
 
 /**
  * Genera un reporte PDF de competencias
@@ -55,15 +93,35 @@ async function generateReport(data, outputPath) {
 
     // Iniciar Puppeteer
     console.log('🌐 Iniciando navegador...');
-    browser = await puppeteer.launch({
+
+    // Configurar opciones de lanzamiento
+    const launchOptions = {
       headless: 'new',
       args: [
         '--no-sandbox',
         '--disable-setuid-sandbox',
         '--disable-dev-shm-usage',
-        '--disable-gpu'
+        '--disable-gpu',
+        '--disable-accelerated-2d-canvas',
+        '--no-first-run',
+        '--no-zygote',
+        '--single-process',
+        '--disable-background-timer-throttling',
+        '--disable-backgrounding-occluded-windows',
+        '--disable-renderer-backgrounding'
       ]
-    });
+    };
+
+    // Si estamos en un entorno sin Puppeteer instalado, usar executablePath
+    const chromiumPath = findChromiumExecutable();
+    if (chromiumPath) {
+      launchOptions.executablePath = chromiumPath;
+    } else if (process.env.RAILWAY_ENVIRONMENT || process.env.NODE_ENV === 'production') {
+      // En Railway o producción, intentar usar Puppeteer sin ejecutable específico
+      console.log('⚠️ No se encontró Chromium instalado, usando Puppeteer bundle');
+    }
+
+    browser = await puppeteer.launch(launchOptions);
 
     const page = await browser.newPage();
 
@@ -180,6 +238,37 @@ async function prepareReportData(data) {
   reportData.perfilGeneral = reportData.perfilGeneral || {};
   reportData.planAccion = reportData.planAccion || {};
   reportData.conclusiones = reportData.conclusiones || {};
+
+  // Agregar logo de Re-Skilling.AI
+  try {
+    const logoPath = path.join(__dirname, '..', 'assets', 'images', 'reskiling-logo.png');
+    const logoExists = await fs.pathExists(logoPath);
+
+    if (logoExists) {
+      const logoBuffer = await fs.readFile(logoPath);
+      reportData.logoReskilling = `data:image/png;base64,${logoBuffer.toString('base64')}`;
+    } else {
+      console.warn('⚠️ Logo de Re-Skilling.AI no encontrado en:', logoPath);
+      reportData.logoReskilling = null;
+    }
+  } catch (error) {
+    console.error('❌ Error cargando logo:', error.message);
+    reportData.logoReskilling = null;
+  }
+
+  // Procesar logo de la empresa/universidad
+  if (data.company) {
+    reportData.company = {
+      name: data.company.name || reportData.datosPersonales?.nombreUniversidad || 'Universidad',
+      imageUrl: data.company.image_url || null
+    };
+  } else {
+    // Mantener compatibilidad con formato anterior
+    reportData.company = {
+      name: reportData.datosPersonales?.nombreUniversidad || 'Universidad',
+      imageUrl: reportData.datosPersonales?.logoUniversidad || null
+    };
+  }
 
   return reportData;
 }

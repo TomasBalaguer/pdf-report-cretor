@@ -1,4 +1,8 @@
 {
+    "company": {
+        "name": "Iplacex",
+        "image_url": "https://fls-9fd68e5e-6b36-4f55-9c85-1f292e9a0e82.laravel.cloud/company_logos/logo_3_1757439251.png"
+    },
     "datosPersonales": {
       "nombre": "Alexia",
       "email": "alexia@gmail.com",
