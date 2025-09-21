@@ -1,0 +1,109 @@
+<h2 class="section-title">Análisis de Empleabilidad</h2>
+
+<div class="personal-info">
+  <div class="info-item">
+    <div class="info-icon">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="12" r="10" stroke="white" stroke-width="2" fill="none"/>
+        <circle cx="12" cy="12" r="4" fill="white"/>
+      </svg>
+    </div>
+    <span class="info-label">Objetivo Profesional:</span>
+    <span class="info-value">{{analisisEmpleabilidad.objetivoProfesional}}</span>
+  </div>
+  <div class="info-item">
+    <div class="info-icon">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="12" r="10" stroke="white" stroke-width="2" fill="none"/>
+        <circle cx="12" cy="12" r="4" fill="white"/>
+      </svg>
+    </div>
+    <span class="info-label">Situación Actual:</span>
+    <span class="info-value">{{analisisEmpleabilidad.situacionActual}}</span>
+  </div>
+  <div class="info-item">
+    <div class="info-icon">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="12" r="10" stroke="white" stroke-width="2" fill="none"/>
+        <circle cx="12" cy="12" r="4" fill="white"/>
+      </svg>
+    </div>
+    <span class="info-label">% Match General:</span>
+    <span class="info-value">{{analisisEmpleabilidad.matchGeneral}}%</span>
+  </div>
+  <div class="info-item">
+    <div class="info-icon">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="12" r="10" stroke="white" stroke-width="2" fill="none"/>
+        <circle cx="12" cy="12" r="4" fill="white"/>
+      </svg>
+    </div>
+    <span class="info-label">Readiness Timeline:</span>
+    <span class="info-value">{{analisisEmpleabilidad.timelineReadiness}}</span>
+  </div>
+</div>
+
+{{#if analisisEmpleabilidad.gapAnalysis}}
+<div class="gap-analysis">
+  <h3 style="color: var(--primary-blue); margin-bottom: 15px; font-size: 20px;">GAP Analysis específico</h3>
+
+  <!-- Box de Competencias Críticas -->
+  <div class="personal-info gap-box" style="margin-bottom: 15px;">
+    <h4 class="box-title">Competencias Críticas para Liderazgo en ONG:</h4>
+    {{#each analisisEmpleabilidad.gapAnalysis}}
+      {{#if (gte gap 3)}}
+      <div class="info-item">
+        <div class="info-icon-small">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="10" stroke="white" stroke-width="2" fill="none"/>
+            <circle cx="12" cy="12" r="4" fill="white"/>
+          </svg>
+        </div>
+        <span class="info-label">{{competencia}}:</span>
+        <span class="info-value">Requerido: {{requerido}}/10 - Actual: {{actual}}/10 - <strong>GAP: {{gap}} puntos</strong></span>
+      </div>
+      {{/if}}
+    {{/each}}
+  </div>
+
+  <!-- Box de Competencias Importantes -->
+  <div class="personal-info gap-box" style="margin-bottom: 15px;">
+    <h4 class="box-title">Competencias Importantes:</h4>
+    {{#each analisisEmpleabilidad.gapAnalysis}}
+      {{#if (lt gap 3)}}
+      <div class="info-item">
+        <div class="info-icon-small">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="10" stroke="white" stroke-width="2" fill="none"/>
+            <circle cx="12" cy="12" r="4" fill="white"/>
+          </svg>
+        </div>
+        <span class="info-label">{{competencia}}:</span>
+        <span class="info-value">Requerido: {{requerido}}/10 - Actual: {{actual}}/10 - <strong>GAP: {{gap}} puntos</strong></span>
+      </div>
+      {{/if}}
+    {{/each}}
+  </div>
+
+</div>
+{{/if}}
+
+{{#if analisisEmpleabilidad.fortalezasObjetivo}}
+<!-- Box de Fortalezas que potencian el objetivo - Separado del GAP Analysis -->
+<div class="personal-info gap-box" style="margin-top: 20px; page-break-inside: avoid;">
+  <h4 class="box-title">Fortalezas que potencian el objetivo:</h4>
+  {{#each analisisEmpleabilidad.fortalezasObjetivo}}
+  <div class="info-item" style="margin-bottom: 10px;">
+    <div class="info-icon-small">
+      <svg width="10" height="10" viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="12" r="10" stroke="white" stroke-width="2" fill="none"/>
+        <circle cx="12" cy="12" r="4" fill="white"/>
+      </svg>
+    </div>
+    <span class="info-label" style="min-width: 160px;">{{nombre}}:</span>
+    <span class="info-value" style="font-size: 11px;">{{descripcion}}</span>
+  </div>
+  {{/each}}
+</div>
+{{/if}}
+

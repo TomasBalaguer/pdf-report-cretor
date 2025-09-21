@@ -1,0 +1,55 @@
+<h2 class="section-title">Resumen Ejecutivo</h2>
+
+<div class="summary-content">
+  <div class="summary-left">
+    <div class="profile-box">
+      <h3>Perfil General:</h3>
+      <p>
+        {{#if perfilGeneral.resumenDescriptivo}}
+          {{perfilGeneral.resumenDescriptivo}}
+        {{else}}
+          (Resumen descriptivo de la personalidad)
+        {{/if}}
+      </p>
+    </div>
+
+    <div class="profile-box">
+      <h3>Metodología:</h3>
+      <p>
+        {{#if perfilGeneral.metodologia}}
+          {{perfilGeneral.metodologia}}
+        {{else}}
+          Análisis basado en competencias profesionales y habilidades blandas mediante evaluación multidimensional.
+        {{/if}}
+      </p>
+    </div>
+  </div>
+
+  <div class="summary-right">
+    <div class="chart-container">
+      {{#if chartRadar}}
+        <img src="{{chartRadar}}" alt="Gráfico de competencias">
+      {{/if}}
+    </div>
+  </div>
+</div>
+
+<div class="competency-lists">
+  <div class="list-section strengths-box">
+    <h3>Fortalezas:</h3>
+    <ul>
+      {{#each fortalezasList}}
+        <li>{{this}}</li>
+      {{/each}}
+    </ul>
+  </div>
+
+  <div class="list-section opportunities-box">
+    <h3>Áreas de Oportunidad:</h3>
+    <ul>
+      {{#each oportunidadesList}}
+        <li>{{this}}</li>
+      {{/each}}
+    </ul>
+  </div>
+</div>

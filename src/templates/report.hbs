@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reporte de Competencias - {{datosPersonales.nombre}}</title>
+  <style>
+    {{{css}}}
+  </style>
+</head>
+<body>
+  <!-- Página 1: Portada y Resumen Ejecutivo -->
+  <div class="page">
+    {{> header}}
+
+    <h1 class="main-title">Reporte de Competencias</h1>
+
+    <div class="personal-info">
+      <div class="info-item">
+        <div class="info-icon">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="10" stroke="white" stroke-width="2" fill="none"/>
+            <circle cx="12" cy="12" r="4" fill="white"/>
+          </svg>
+        </div>
+        <span class="info-label">Nombre:</span>
+        <span class="info-value">{{datosPersonales.nombre}}</span>
+      </div>
+      <div class="info-item">
+        <div class="info-icon">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="10" stroke="white" stroke-width="2" fill="none"/>
+            <circle cx="12" cy="12" r="4" fill="white"/>
+          </svg>
+        </div>
+        <span class="info-label">E-mail:</span>
+        <span class="info-value">{{datosPersonales.email}}</span>
+      </div>
+      <div class="info-item">
+        <div class="info-icon">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="10" stroke="white" stroke-width="2" fill="none"/>
+            <circle cx="12" cy="12" r="4" fill="white"/>
+          </svg>
+        </div>
+        <span class="info-label">Perfil Objetivo:</span>
+        <span class="info-value">{{datosPersonales.perfilObjetivo}}</span>
+      </div>
+      <div class="info-item">
+        <div class="info-icon">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="10" stroke="white" stroke-width="2" fill="none"/>
+            <circle cx="12" cy="12" r="4" fill="white"/>
+          </svg>
+        </div>
+        <span class="info-label">Fecha de Test:</span>
+        <span class="info-value">{{datosPersonales.fechaTest}}</span>
+      </div>
+    </div>
+
+    {{> executive-summary}}
+  </div>
+
+  <!-- Página 2: Competencias destacadas -->
+  {{#if competenciasAgrupadas.fortalezas}}
+  <div class="page">
+    {{> header}}
+
+    <h2 class="section-title">Detalle por Competencia</h2>
+
+    <div class="competency-group">
+      <h3 class="competency-group-title">
+        Competencias destacadas (Nivel Alto [7/8] o Excepcional [9/10])
+      </h3>
+
+      <div class="competencies-container distribute-even">
+        {{#each competenciasAgrupadas.fortalezas}}
+          <div class="competency-card competency-high {{../competenciasAgrupadas.fortalezasSizeClass}}">
+            <div class="competency-header">
+              <div class="competency-badge badge-green">{{puntaje}}/10</div>
+              <div>
+                <div class="competency-name">{{nombre}}</div>
+                {{#if definicion}}
+                <div class="competency-definition">{{definicion}}</div>
+                {{/if}}
+              </div>
+            </div>
+            <div class="competency-description">
+              {{descripcion}}
+            </div>
+            {{#if analisisDetallado}}
+            <div class="competency-analysis">
+              {{analisisDetallado}}
+            </div>
+            {{/if}}
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+  {{/if}}
+
+  <!-- Página 3: Competencias en desarrollo -->
+  {{#if competenciasAgrupadas.desarrollo}}
+  <div class="page">
+    {{> header}}
+
+    <h2 class="section-title">Detalle por Competencia</h2>
+
+    <div class="competency-group">
+      <h3 class="competency-group-title">
+        Competencias en vías de desarrollo (Nivel Medio [5/6])
+      </h3>
+
+      <div class="competencies-container distribute-even">
+        {{#each competenciasAgrupadas.desarrollo}}
+          <div class="competency-card competency-medium {{../competenciasAgrupadas.desarrolloSizeClass}}">
+            <div class="competency-header">
+              <div class="competency-badge badge-yellow">{{puntaje}}/10</div>
+              <div>
+                <div class="competency-name">{{nombre}}</div>
+                {{#if definicion}}
+                <div class="competency-definition">{{definicion}}</div>
+                {{/if}}
+              </div>
+            </div>
+            <div class="competency-description">
+              {{descripcion}}
+            </div>
+            {{#if analisisDetallado}}
+            <div class="competency-analysis">
+              {{analisisDetallado}}
+            </div>
+            {{/if}}
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+  {{/if}}
+
+  <!-- Página 4: Competencias a desarrollar -->
+  {{#if competenciasAgrupadas.oportunidades}}
+  <div class="page">
+    {{> header}}
+
+    <h2 class="section-title">Detalle por Competencia</h2>
+
+    <div class="competency-group">
+      <h3 class="competency-group-title">
+        Competencias a desarrollar (Nivel Bajo o muy bajo)
+      </h3>
+
+      <div class="competencies-container distribute-even">
+        {{#each competenciasAgrupadas.oportunidades}}
+          <div class="competency-card competency-low {{../competenciasAgrupadas.oportunidadesSizeClass}}">
+            <div class="competency-header">
+              <div class="competency-badge {{#if (lt puntaje 3)}}badge-dark-red{{else}}badge-red{{/if}}">
+                {{puntaje}}/10
+              </div>
+              <div>
+                <div class="competency-name">{{nombre}}</div>
+                {{#if definicion}}
+                <div class="competency-definition">{{definicion}}</div>
+                {{/if}}
+              </div>
+            </div>
+            <div class="competency-description">
+              {{descripcion}}
+            </div>
+            {{#if analisisDetallado}}
+            <div class="competency-analysis">
+              {{analisisDetallado}}
+            </div>
+            {{/if}}
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+  {{/if}}
+
+  <!-- Página 5: Análisis de Empleabilidad con GAP Analysis y Fortalezas -->
+  <div class="page">
+    {{> header}}
+    {{> employability}}
+  </div>
+
+  <!-- Página 6: Timeline y Plan de Acción -->
+  <div class="page">
+    {{> header}}
+
+    {{#if analisisEmpleabilidad.timeline}}
+    <div class="timeline-section">
+      <h2 class="section-title">Timeline Realista</h2>
+
+      <div class="personal-info timeline-box">
+        {{#each analisisEmpleabilidad.timeline}}
+        <div class="info-item">
+          <div class="info-icon-small timeline-icon">
+            <span style="font-size: 11px; font-weight: bold;">{{numero}}</span>
+          </div>
+          <span class="info-label" style="min-width: 120px;">{{fase}}</span>
+          <span class="info-value">{{descripcion}}</span>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+    {{/if}}
+
+    {{> action-plan}}
+  </div>
+
+  <!-- Página 8: Conclusiones -->
+  <div class="page">
+    {{> header}}
+
+    <h2 class="section-title">Conclusiones y Recomendaciones Finales</h2>
+
+    <div class="conclusions">
+      {{#if conclusiones.resumenFinal}}
+        <p>{{conclusiones.resumenFinal}}</p>
+      {{/if}}
+
+      {{#if conclusiones.recomendacionPrincipal}}
+        <p><strong>Próximo paso recomendado:</strong> {{conclusiones.recomendacionPrincipal}}</p>
+      {{/if}}
+    </div>
+
+    <h3 style="margin-top: 40px; margin-bottom: 20px; color: var(--primary-blue);">
+      Ciencia del Informe y Confidencialidad
+    </h3>
+
+    <div class="confidentiality">
+      <p>
+        Este informe se basa en el análisis de prosodia vocal y contenido discursivo, combinando
+        métricas de inteligencia emocional, comunicación y liderazgo. La metodología se sustenta
+        en modelos de evaluación psicológica y en investigaciones sobre empleabilidad en
+        contextos sociales.
+      </p>
+      <p>
+        Los datos obtenidos son estrictamente confidenciales y serán compartidos únicamente
+        con el participante y/o su institución educativa con fines de desarrollo profesional.
+      </p>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<h2 class="section-title">Plan de Acción Personalizado</h2>
+
+<p class="action-intro">
+  Basado en tu análisis, te recomendamos enfocarte en las siguientes acciones para acelerar tu desarrollo
+  profesional y cerrar las brechas identificadas.
+</p>
+
+{{#if planAccion.propuestasDesarrollo}}
+<h3 style="color: var(--primary-blue); margin-bottom: 15px; margin-top: 20px; font-size: 18px;">Propuestas de Desarrollo</h3>
+
+{{#each planAccion.propuestasDesarrollo}}
+  {{#if titulo}}
+  <div class="action-item">
+    <div class="action-title">{{titulo}}</div>
+    {{#if descripcion}}
+    <div class="action-description">
+      {{descripcion}}
+    </div>
+    {{/if}}
+  </div>
+  {{/if}}
+{{/each}}
+{{/if}}
+
+
+{{#if planAccion.proximoPaso}}
+<div class="next-step-box">
+  <h4 class="next-step-title">Próximo Paso Recomendado:</h4>
+  <p class="next-step-text">
+    {{planAccion.proximoPaso}}
+  </p>
+</div>
+{{/if}}

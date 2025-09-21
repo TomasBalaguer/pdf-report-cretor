@@ -1,0 +1,866 @@
+/* Estilos para el Reporte de Competencias PDF */
+
+:root {
+  --primary-blue: #0066CC;
+  --secondary-blue: #1E40AF;
+  --cyan-chart: #00BCD4;
+  --green-badge: #10B981;
+  --yellow-badge: #F59E0B;
+  --red-badge: #EF4444;
+  --dark-red-badge: #DC2626;
+  --gray-bg: #F3F4F6;
+  --blue-bg: #E6F2FF;
+  --text-primary: #1F2937;
+  --text-secondary: #6B7280;
+  --light-pink-bg: #FFE4E6;
+  --light-yellow-bg: #FEF3C7;
+  --light-green-bg: #D1FAE5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  color: var(--text-primary);
+  line-height: 1.6;
+  background: white;
+}
+
+.page {
+  width: 210mm;
+  min-height: 297mm;
+  padding: 15mm 12mm;
+  margin: 0 auto;
+  background: white;
+  page-break-after: always;
+  page-break-inside: avoid;
+  position: relative;
+}
+
+/* Header con logos */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.header-left img {
+  height: 60px;
+  width: auto;
+}
+
+.universidad-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.universidad-logo {
+  font-size: 40px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.universidad-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-left .subtitle {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+.header-right {
+  text-align: right;
+}
+
+.header-right .logo-reskilling {
+  height: 50px;
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--primary-blue);
+  letter-spacing: 1px;
+}
+
+/* Línea azul debajo del header */
+.header-line {
+  height: 2px;
+  background: linear-gradient(to right, var(--primary-blue), var(--cyan-chart));
+  margin-bottom: 15px;
+}
+
+/* Título principal */
+.main-title {
+  font-size: 36px;
+  color: var(--primary-blue);
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Datos personales y empleabilidad - MISMO ESTILO */
+.personal-info {
+  background: var(--blue-bg);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 25px;
+  border: 1px solid #D4E4F7;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.info-icon {
+  width: 16px;
+  height: 16px;
+  background: var(--primary-blue);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  font-size: 10px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.info-value {
+  flex: 1;
+  font-size: 12px;
+  color: var(--text-primary);
+  word-wrap: break-word;
+}
+
+/* Líneas conectoras entre iconos */
+.info-item:not(:last-child) .info-icon::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 24px;
+  background: linear-gradient(to bottom, var(--primary-blue), transparent);
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.3;
+}
+
+.info-label {
+  font-weight: 600;
+  margin-right: 8px;
+  min-width: 140px;
+  max-width: 140px;
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+/* Resumen Ejecutivo */
+.executive-summary {
+  margin-bottom: 15px;
+}
+
+.section-title {
+  font-size: 22px;
+  color: var(--primary-blue);
+  border-bottom: 2px solid var(--primary-blue);
+  padding-bottom: 6px;
+  margin-bottom: 12px;
+}
+
+.summary-content {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 20px;
+}
+
+.summary-left {
+  padding-right: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.profile-box {
+  background: var(--blue-bg);
+  border-radius: 8px;
+  padding: 12px 15px;
+  border: 1px solid #D4E4F7;
+}
+
+.profile-box h3 {
+  font-size: 13px;
+  margin-bottom: 6px;
+  color: var(--primary-blue);
+  font-weight: 600;
+}
+
+.profile-box p {
+  font-size: 11px;
+  line-height: 1.3;
+  margin: 0;
+  text-align: justify;
+  color: var(--text-secondary);
+}
+
+.profile-box p strong {
+  font-size: 11px;
+  color: var(--primary-blue);
+}
+
+.summary-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chart-container {
+  width: 280px;
+  height: 280px;
+}
+
+.chart-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Listas de fortalezas y áreas */
+.competency-lists {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.list-section {
+  border-radius: 8px;
+  padding: 12px 15px;
+  border: 1px solid;
+}
+
+.list-section.strengths-box {
+  background: #E8F5E9;
+  border-color: #C8E6C9;
+}
+
+.list-section.opportunities-box {
+  background: #FFF3E0;
+  border-color: #FFE0B2;
+}
+
+.list-section h3 {
+  font-size: 13px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.list-section.strengths-box h3 {
+  color: #2E7D32;
+}
+
+.list-section.opportunities-box h3 {
+  color: #E65100;
+}
+
+.list-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list-section li {
+  padding: 3px 0;
+  padding-left: 18px;
+  position: relative;
+  font-size: 11px;
+  line-height: 1.3;
+  color: var(--text-secondary);
+}
+
+.list-section li:before {
+  content: '•';
+  position: absolute;
+  left: 6px;
+  font-size: 14px;
+}
+
+.list-section.strengths-box li:before {
+  color: #4CAF50;
+}
+
+.list-section.opportunities-box li:before {
+  color: #FF9800;
+}
+
+/* Badges de competencias */
+.competency-card {
+  margin-bottom: 8px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border-left: 3px solid;
+  page-break-inside: avoid;
+  display: flex;
+  flex-direction: column;
+}
+
+.competency-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+
+.competency-badge {
+  min-width: 42px;
+  height: 26px;
+  border-radius: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 11px;
+  color: white;
+  flex-shrink: 0;
+  padding: 0 8px;
+}
+
+.badge-green {
+  background: var(--green-badge);
+}
+
+.badge-yellow {
+  background: var(--yellow-badge);
+}
+
+.badge-red {
+  background: var(--red-badge);
+}
+
+.badge-dark-red {
+  background: var(--dark-red-badge);
+}
+
+.competency-name {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.competency-definition {
+  font-size: 9px;
+  font-style: italic;
+  color: #666;
+  margin-top: 2px;
+  line-height: 1.2;
+}
+
+.competency-description {
+  font-size: 10px;
+  line-height: 1.3;
+  color: var(--text-secondary);
+  text-align: left;
+  margin-top: 6px;
+  margin-bottom: 4px;
+}
+
+.competency-analysis {
+  font-size: 9px;
+  line-height: 1.3;
+  color: var(--text-secondary);
+  text-align: left;
+  margin-top: 4px;
+}
+
+/* Fondos de competencias según nivel */
+.competency-high {
+  background: #F0F9F4;
+  border-left-color: var(--green-badge);
+}
+
+.competency-high .competency-name {
+  color: var(--green-badge);
+}
+
+.competency-medium {
+  background: #FFFAF0;
+  border-left-color: var(--yellow-badge);
+}
+
+.competency-medium .competency-name {
+  color: var(--yellow-badge);
+}
+
+.competency-low {
+  background: #FFF5F5;
+  border-left-color: var(--red-badge);
+}
+
+.competency-low .competency-name {
+  color: var(--red-badge);
+}
+
+/* GAP Analysis */
+.gap-analysis {
+  margin-top: 20px;
+  page-break-inside: avoid;
+}
+
+.gap-box {
+  padding: 15px;
+  page-break-inside: avoid;
+}
+
+.box-title {
+  font-size: 13px;
+  color: var(--primary-blue);
+  margin-bottom: 12px;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(0, 102, 204, 0.2);
+  padding-bottom: 8px;
+}
+
+/* Iconos más pequeños para GAP Analysis */
+.info-icon-small {
+  width: 14px;
+  height: 14px;
+  background: var(--primary-blue);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  font-size: 9px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+/* Líneas conectoras más cortas para iconos pequeños */
+.gap-box .info-item:not(:last-child) .info-icon-small::after {
+  content: '';
+  position: absolute;
+  width: 1px;
+  height: 25px;
+  background: linear-gradient(to bottom, var(--primary-blue), transparent);
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.3;
+}
+
+/* Alinear items con iconos pequeños */
+.gap-box .info-item {
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.gap-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.gap-table th {
+  background: var(--primary-blue);
+  color: white;
+  padding: 12px;
+  text-align: left;
+  font-weight: 600;
+}
+
+.gap-table td {
+  padding: 12px;
+  border-bottom: 1px solid #E5E5E5;
+}
+
+.gap-table tr:hover {
+  background: var(--gray-bg);
+}
+
+.gap-value {
+  font-weight: bold;
+  text-align: center;
+}
+
+.gap-critical {
+  color: var(--red-badge);
+}
+
+.gap-warning {
+  color: var(--yellow-badge);
+}
+
+.gap-ok {
+  color: var(--green-badge);
+}
+
+/* Match percentage */
+.match-container {
+  background: var(--gray-bg);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.match-percentage {
+  font-size: 48px;
+  font-weight: bold;
+  color: var(--primary-blue);
+  margin: 10px 0;
+}
+
+.match-label {
+  font-size: 18px;
+  color: var(--text-secondary);
+}
+
+/* Timeline */
+.timeline-section {
+  margin-top: 15px;
+  margin-bottom: 20px;
+  page-break-inside: avoid;
+}
+
+.timeline-box {
+  background: var(--info-bg);
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #B3D9FF;
+}
+
+.timeline-icon {
+  color: white;
+}
+
+/* Timeline items ya no se usan - ahora usamos info-item con iconos pequeños */
+
+/* Plan de acción */
+.action-intro {
+  margin-bottom: 12px;
+  color: var(--text-secondary);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.action-plan {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.action-item {
+  background: var(--gray-bg);
+  border-left: 3px solid var(--primary-blue);
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  page-break-inside: avoid;
+}
+
+.action-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 5px;
+}
+
+.action-description {
+  font-size: 11px;
+  line-height: 1.4;
+  color: var(--text-secondary);
+  text-align: justify;
+}
+
+.next-step-box {
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-dark) 100%);
+  color: white;
+  padding: 12px 15px;
+  border-radius: 8px;
+  margin-top: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.next-step-title {
+  color: white;
+  margin-bottom: 6px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.next-step-text {
+  font-size: 11px;
+  line-height: 1.4;
+  color: white;
+  margin: 0;
+}
+
+/* Conclusiones */
+.conclusions {
+  background: var(--info-bg);
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #B3D9FF;
+}
+
+.conclusions p {
+  font-size: 13px;
+  line-height: 1.4;
+  margin-bottom: 12px;
+  text-align: justify;
+  color: var(--text-primary);
+}
+
+/* Confidencialidad */
+.confidentiality {
+  background: var(--info-bg);
+  border: 1px solid #B3D9FF;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.confidentiality p {
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  text-align: justify;
+}
+
+/* Contenedor de grupo de competencias */
+.competency-group {
+  page-break-inside: avoid;
+  margin-bottom: 20px;
+}
+
+.competency-group-title {
+  font-size: 16px;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+  font-weight: 600;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--gray-bg);
+}
+
+/* Asegurar que todas las competencias del mismo color quepan en una página */
+.competencies-container {
+  display: flex;
+  flex-direction: column;
+  height: 210mm;
+  justify-content: space-between;
+}
+
+/* Ajuste para distribuir uniformemente */
+.competencies-container.distribute-even {
+  justify-content: space-evenly;
+}
+
+/* Clases de tamaño dinámico para tarjetas */
+/* XL: 1-3 competencias */
+.competency-card.card-xl {
+  min-height: 55mm;
+  flex: 1;
+  max-height: 65mm;
+  padding: 15px 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.competency-card.card-xl .competency-badge {
+  min-width: 50px;
+  height: 30px;
+  font-size: 13px;
+}
+
+.competency-card.card-xl .competency-name {
+  font-size: 16px;
+}
+
+.competency-card.card-xl .competency-description {
+  font-size: 11px;
+  line-height: 1.3;
+}
+
+.competency-card.card-xl .competency-definition {
+  font-size: 10px;
+}
+
+.competency-card.card-xl .competency-analysis {
+  font-size: 10px;
+}
+
+/* LG: 4-5 competencias */
+.competency-card.card-lg {
+  min-height: 35mm;
+  flex: 1;
+  max-height: 42mm;
+  padding: 12px 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.competency-card.card-lg .competency-badge {
+  min-width: 45px;
+  height: 28px;
+  font-size: 12px;
+}
+
+.competency-card.card-lg .competency-name {
+  font-size: 15px;
+}
+
+.competency-card.card-lg .competency-description {
+  font-size: 10px;
+  line-height: 1.3;
+}
+
+.competency-card.card-lg .competency-definition {
+  font-size: 9px;
+}
+
+.competency-card.card-lg .competency-analysis {
+  font-size: 9px;
+}
+
+/* MD: 6-8 competencias */
+.competency-card.card-md {
+  min-height: 22mm;
+  flex: 1;
+  max-height: 28mm;
+  padding: 10px 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.competency-card.card-md .competency-badge {
+  min-width: 42px;
+  height: 26px;
+  font-size: 11px;
+}
+
+.competency-card.card-md .competency-name {
+  font-size: 14px;
+}
+
+.competency-card.card-md .competency-description {
+  font-size: 9px;
+  line-height: 1.2;
+}
+
+.competency-card.card-md .competency-definition {
+  font-size: 8px;
+}
+
+.competency-card.card-md .competency-analysis {
+  font-size: 8px;
+}
+
+/* SM: 9-12 competencias */
+.competency-card.card-sm {
+  min-height: 14mm;
+  flex: 1;
+  max-height: 18mm;
+  padding: 8px 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.competency-card.card-sm .competency-badge {
+  min-width: 40px;
+  height: 24px;
+  font-size: 10px;
+}
+
+.competency-card.card-sm .competency-name {
+  font-size: 13px;
+}
+
+.competency-card.card-sm .competency-description {
+  font-size: 8px;
+  line-height: 1.2;
+}
+
+.competency-card.card-sm .competency-definition {
+  font-size: 7px;
+}
+
+.competency-card.card-sm .competency-analysis {
+  font-size: 7px;
+}
+
+/* XS: más de 12 competencias */
+.competency-card.card-xs {
+  min-height: 11mm;
+  flex: 1;
+  max-height: 15mm;
+  padding: 6px 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.competency-card.card-xs .competency-badge {
+  min-width: 38px;
+  height: 22px;
+  font-size: 9px;
+}
+
+.competency-card.card-xs .competency-name {
+  font-size: 12px;
+}
+
+.competency-card.card-xs .competency-description {
+  font-size: 7px;
+  line-height: 1.1;
+}
+
+.competency-card.card-xs .competency-definition {
+  font-size: 6px;
+}
+
+.competency-card.card-xs .competency-analysis {
+  font-size: 6px;
+}
+
+/* Ajustes para impresión */
+@media print {
+  .page {
+    page-break-after: always;
+    page-break-inside: avoid;
+    margin: 0;
+  }
+
+  body {
+    margin: 0;
+  }
+
+  .competency-group {
+    page-break-inside: avoid;
+  }
+
+  .competency-card {
+    page-break-inside: avoid;
+  }
+}
