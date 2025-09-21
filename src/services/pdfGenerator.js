@@ -30,13 +30,14 @@ handlebars.registerHelper('if', function(conditional, options) {
  */
 function findChromiumExecutable() {
   const possiblePaths = [
+    process.env.PUPPETEER_EXECUTABLE_PATH,
+    '/nix/var/nix/profiles/default/bin/chromium',
     '/usr/bin/chromium-browser',
     '/usr/bin/chromium',
     '/usr/bin/google-chrome-stable',
     '/usr/bin/google-chrome',
     '/opt/google/chrome/chrome',
-    '/app/.apt/usr/bin/google-chrome',
-    process.env.PUPPETEER_EXECUTABLE_PATH
+    '/app/.apt/usr/bin/google-chrome'
   ];
 
   // Intenta encontrar chromium con which
