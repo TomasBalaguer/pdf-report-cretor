@@ -25,9 +25,18 @@ router.post('/generate', async (req, res) => {
     // Generar ID único para el reporte
     const reportId = uuidv4();
     const fileName = `report-${reportId}.pdf`;
-    const filePath = path.join(__dirname, '..', '..', 'generated-pdfs', fileName);
+
+    // Usar variable de entorno para la ruta de almacenamiento si está disponible
+    const storageDir = process.env.PDF_STORAGE_PATH || path.join(__dirname, '..', '..', 'generated-pdfs');
+
+    // Asegurar que el directorio existe
+    await fs.ensureDir(storageDir);
+
+    const filePath = path.join(storageDir, fileName);
 
     console.log(`🔄 Generando PDF con ID: ${reportId}`);
+    console.log(`📁 Directorio de almacenamiento: ${storageDir}`);
+    console.log(`📄 Ruta completa del archivo: ${filePath}`);
 
     // Generar el PDF
     await pdfGenerator.generateReport(req.body, filePath);
@@ -66,7 +75,8 @@ router.post('/generate', async (req, res) => {
 // GET /api/reports/list
 router.get('/list', async (req, res) => {
   try {
-    const pdfDir = path.join(__dirname, '..', '..', 'generated-pdfs');
+    const pdfDir = process.env.PDF_STORAGE_PATH || path.join(__dirname, '..', '..', 'generated-pdfs');
+    await fs.ensureDir(pdfDir);
     const files = await fs.readdir(pdfDir);
 
     const pdfFiles = files
@@ -102,7 +112,8 @@ router.delete('/:fileName', async (req, res) => {
       });
     }
 
-    const filePath = path.join(__dirname, '..', '..', 'generated-pdfs', fileName);
+    const storageDir = process.env.PDF_STORAGE_PATH || path.join(__dirname, '..', '..', 'generated-pdfs');
+    const filePath = path.join(storageDir, fileName);
 
     const exists = await fs.pathExists(filePath);
     if (!exists) {

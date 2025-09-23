@@ -20,7 +20,8 @@ app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ extended: true, limit: '50mb' }));
 
 // Servir PDFs generados
-app.use('/generated-pdfs', express.static(path.join(__dirname, '..', 'generated-pdfs')));
+const pdfStoragePath = process.env.PDF_STORAGE_PATH || path.join(__dirname, '..', 'generated-pdfs');
+app.use('/generated-pdfs', express.static(pdfStoragePath));
 
 // Rutas
 app.use('/api/reports', reportRoutes);
@@ -58,9 +59,9 @@ app.use((req, res) => {
 // Crear directorio para PDFs si no existe
 async function initializeApp() {
   try {
-    const pdfDir = path.join(__dirname, '..', 'generated-pdfs');
+    const pdfDir = process.env.PDF_STORAGE_PATH || path.join(__dirname, '..', 'generated-pdfs');
     await fs.ensureDir(pdfDir);
-    console.log('✅ Directorio de PDFs verificado');
+    console.log(`✅ Directorio de PDFs verificado: ${pdfDir}`);
 
     app.listen(PORT, () => {
       console.log(`🚀 Servidor corriendo en http://localhost:${PORT}`);
