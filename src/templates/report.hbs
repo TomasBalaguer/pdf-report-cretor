@@ -62,122 +62,366 @@
   </div>
 
   <!-- Página 2: Competencias destacadas -->
-  {{#if competenciasAgrupadas.fortalezas}}
-  <div class="page">
-    {{> header}}
+  {{#if competenciasAgrupadas.fortalezasDividido}}
+    <!-- Primera parte de fortalezas -->
+    {{#if competenciasAgrupadas.fortalezasParte1}}
+    <div class="page">
+      {{> header}}
 
-    <h2 class="section-title">Detalle por Competencia</h2>
+      <h2 class="section-title">Detalle por Competencia</h2>
 
-    <div class="competency-group">
-      <h3 class="competency-group-title">
-        Competencias destacadas (Nivel Alto [7/8] o Excepcional [9/10])
-      </h3>
+      <div class="competency-group">
+        <h3 class="competency-group-title">
+          Competencias destacadas (Nivel Alto [7/8] o Excepcional [9/10]) - Parte 1
+        </h3>
 
-      <div class="competencies-container distribute-even">
-        {{#each competenciasAgrupadas.fortalezas}}
-          <div class="competency-card competency-high {{../competenciasAgrupadas.fortalezasSizeClass}}">
-            <div class="competency-header">
-              <div class="competency-badge badge-green">{{puntaje}}/10</div>
-              <div>
-                <div class="competency-name">{{nombre}}</div>
-                {{#if definicion}}
-                <div class="competency-definition">{{definicion}}</div>
-                {{/if}}
+        <div class="competencies-container distribute-even">
+          {{#each competenciasAgrupadas.fortalezasParte1}}
+            <div class="competency-card competency-high {{../competenciasAgrupadas.fortalezasParte1SizeClass}}">
+              <div class="competency-header">
+                <div class="competency-badge badge-green">{{puntaje}}/10</div>
+                <div>
+                  <div class="competency-name">{{nombre}}</div>
+                  {{#if definicion}}
+                  <div class="competency-definition">{{definicion}}</div>
+                  {{/if}}
+                </div>
               </div>
+              <div class="competency-description">
+                {{descripcion}}
+              </div>
+              {{#if analisisDetallado}}
+              <div class="competency-analysis">
+                {{analisisDetallado}}
+              </div>
+              {{/if}}
             </div>
-            <div class="competency-description">
-              {{descripcion}}
-            </div>
-            {{#if analisisDetallado}}
-            <div class="competency-analysis">
-              {{analisisDetallado}}
-            </div>
-            {{/if}}
-          </div>
-        {{/each}}
+          {{/each}}
+        </div>
       </div>
     </div>
-  </div>
+    {{/if}}
+
+    <!-- Segunda parte de fortalezas -->
+    {{#if competenciasAgrupadas.fortalezasParte2}}
+    <div class="page">
+      {{> header}}
+
+      <h2 class="section-title">Detalle por Competencia</h2>
+
+      <div class="competency-group">
+        <h3 class="competency-group-title">
+          Competencias destacadas (Nivel Alto [7/8] o Excepcional [9/10]) - Parte 2
+        </h3>
+
+        <div class="competencies-container distribute-even">
+          {{#each competenciasAgrupadas.fortalezasParte2}}
+            <div class="competency-card competency-high {{../competenciasAgrupadas.fortalezasParte2SizeClass}}">
+              <div class="competency-header">
+                <div class="competency-badge badge-green">{{puntaje}}/10</div>
+                <div>
+                  <div class="competency-name">{{nombre}}</div>
+                  {{#if definicion}}
+                  <div class="competency-definition">{{definicion}}</div>
+                  {{/if}}
+                </div>
+              </div>
+              <div class="competency-description">
+                {{descripcion}}
+              </div>
+              {{#if analisisDetallado}}
+              <div class="competency-analysis">
+                {{analisisDetallado}}
+              </div>
+              {{/if}}
+            </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+    {{/if}}
+  {{else}}
+    {{#if competenciasAgrupadas.fortalezas}}
+    <div class="page">
+      {{> header}}
+
+      <h2 class="section-title">Detalle por Competencia</h2>
+
+      <div class="competency-group">
+        <h3 class="competency-group-title">
+          Competencias destacadas (Nivel Alto [7/8] o Excepcional [9/10])
+        </h3>
+
+        <div class="competencies-container distribute-even">
+          {{#each competenciasAgrupadas.fortalezas}}
+            <div class="competency-card competency-high {{../competenciasAgrupadas.fortalezasSizeClass}}">
+              <div class="competency-header">
+                <div class="competency-badge badge-green">{{puntaje}}/10</div>
+                <div>
+                  <div class="competency-name">{{nombre}}</div>
+                  {{#if definicion}}
+                  <div class="competency-definition">{{definicion}}</div>
+                  {{/if}}
+                </div>
+              </div>
+              <div class="competency-description">
+                {{descripcion}}
+              </div>
+              {{#if analisisDetallado}}
+              <div class="competency-analysis">
+                {{analisisDetallado}}
+              </div>
+              {{/if}}
+            </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+    {{/if}}
   {{/if}}
 
-  <!-- Página 3: Competencias en desarrollo -->
-  {{#if competenciasAgrupadas.desarrollo}}
-  <div class="page">
-    {{> header}}
+  <!-- Competencias en desarrollo -->
+  {{#if competenciasAgrupadas.desarrolloDividido}}
+    <!-- Primera parte de desarrollo -->
+    {{#if competenciasAgrupadas.desarrolloParte1}}
+    <div class="page">
+      {{> header}}
 
-    <h2 class="section-title">Detalle por Competencia</h2>
+      <h2 class="section-title">Detalle por Competencia</h2>
 
-    <div class="competency-group">
-      <h3 class="competency-group-title">
-        Competencias en vías de desarrollo (Nivel Medio [5/6])
-      </h3>
+      <div class="competency-group">
+        <h3 class="competency-group-title">
+          Competencias en vías de desarrollo (Nivel Medio [5/6]) - Parte 1
+        </h3>
 
-      <div class="competencies-container distribute-even">
-        {{#each competenciasAgrupadas.desarrollo}}
-          <div class="competency-card competency-medium {{../competenciasAgrupadas.desarrolloSizeClass}}">
-            <div class="competency-header">
-              <div class="competency-badge badge-yellow">{{puntaje}}/10</div>
-              <div>
-                <div class="competency-name">{{nombre}}</div>
-                {{#if definicion}}
-                <div class="competency-definition">{{definicion}}</div>
-                {{/if}}
+        <div class="competencies-container distribute-even">
+          {{#each competenciasAgrupadas.desarrolloParte1}}
+            <div class="competency-card competency-medium {{../competenciasAgrupadas.desarrolloParte1SizeClass}}">
+              <div class="competency-header">
+                <div class="competency-badge badge-yellow">{{puntaje}}/10</div>
+                <div>
+                  <div class="competency-name">{{nombre}}</div>
+                  {{#if definicion}}
+                  <div class="competency-definition">{{definicion}}</div>
+                  {{/if}}
+                </div>
               </div>
+              <div class="competency-description">
+                {{descripcion}}
+              </div>
+              {{#if analisisDetallado}}
+              <div class="competency-analysis">
+                {{analisisDetallado}}
+              </div>
+              {{/if}}
             </div>
-            <div class="competency-description">
-              {{descripcion}}
-            </div>
-            {{#if analisisDetallado}}
-            <div class="competency-analysis">
-              {{analisisDetallado}}
-            </div>
-            {{/if}}
-          </div>
-        {{/each}}
+          {{/each}}
+        </div>
       </div>
     </div>
-  </div>
+    {{/if}}
+
+    <!-- Segunda parte de desarrollo -->
+    {{#if competenciasAgrupadas.desarrolloParte2}}
+    <div class="page">
+      {{> header}}
+
+      <h2 class="section-title">Detalle por Competencia</h2>
+
+      <div class="competency-group">
+        <h3 class="competency-group-title">
+          Competencias en vías de desarrollo (Nivel Medio [5/6]) - Parte 2
+        </h3>
+
+        <div class="competencies-container distribute-even">
+          {{#each competenciasAgrupadas.desarrolloParte2}}
+            <div class="competency-card competency-medium {{../competenciasAgrupadas.desarrolloParte2SizeClass}}">
+              <div class="competency-header">
+                <div class="competency-badge badge-yellow">{{puntaje}}/10</div>
+                <div>
+                  <div class="competency-name">{{nombre}}</div>
+                  {{#if definicion}}
+                  <div class="competency-definition">{{definicion}}</div>
+                  {{/if}}
+                </div>
+              </div>
+              <div class="competency-description">
+                {{descripcion}}
+              </div>
+              {{#if analisisDetallado}}
+              <div class="competency-analysis">
+                {{analisisDetallado}}
+              </div>
+              {{/if}}
+            </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+    {{/if}}
+  {{else}}
+    {{#if competenciasAgrupadas.desarrollo}}
+    <div class="page">
+      {{> header}}
+
+      <h2 class="section-title">Detalle por Competencia</h2>
+
+      <div class="competency-group">
+        <h3 class="competency-group-title">
+          Competencias en vías de desarrollo (Nivel Medio [5/6])
+        </h3>
+
+        <div class="competencies-container distribute-even">
+          {{#each competenciasAgrupadas.desarrollo}}
+            <div class="competency-card competency-medium {{../competenciasAgrupadas.desarrolloSizeClass}}">
+              <div class="competency-header">
+                <div class="competency-badge badge-yellow">{{puntaje}}/10</div>
+                <div>
+                  <div class="competency-name">{{nombre}}</div>
+                  {{#if definicion}}
+                  <div class="competency-definition">{{definicion}}</div>
+                  {{/if}}
+                </div>
+              </div>
+              <div class="competency-description">
+                {{descripcion}}
+              </div>
+              {{#if analisisDetallado}}
+              <div class="competency-analysis">
+                {{analisisDetallado}}
+              </div>
+              {{/if}}
+            </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+    {{/if}}
   {{/if}}
 
-  <!-- Página 4: Competencias a desarrollar -->
-  {{#if competenciasAgrupadas.oportunidades}}
-  <div class="page">
-    {{> header}}
+  <!-- Competencias a desarrollar -->
+  {{#if competenciasAgrupadas.oportunidadesDividido}}
+    <!-- Primera parte de oportunidades -->
+    {{#if competenciasAgrupadas.oportunidadesParte1}}
+    <div class="page">
+      {{> header}}
 
-    <h2 class="section-title">Detalle por Competencia</h2>
+      <h2 class="section-title">Detalle por Competencia</h2>
 
-    <div class="competency-group">
-      <h3 class="competency-group-title">
-        Competencias a desarrollar (Nivel Bajo o muy bajo)
-      </h3>
+      <div class="competency-group">
+        <h3 class="competency-group-title">
+          Competencias a desarrollar (Nivel Bajo o muy bajo) - Parte 1
+        </h3>
 
-      <div class="competencies-container distribute-even">
-        {{#each competenciasAgrupadas.oportunidades}}
-          <div class="competency-card competency-low {{../competenciasAgrupadas.oportunidadesSizeClass}}">
-            <div class="competency-header">
-              <div class="competency-badge {{#if (lt puntaje 3)}}badge-dark-red{{else}}badge-red{{/if}}">
-                {{puntaje}}/10
+        <div class="competencies-container distribute-even">
+          {{#each competenciasAgrupadas.oportunidadesParte1}}
+            <div class="competency-card competency-low {{../competenciasAgrupadas.oportunidadesParte1SizeClass}}">
+              <div class="competency-header">
+                <div class="competency-badge {{#if (lt puntaje 3)}}badge-dark-red{{else}}badge-red{{/if}}">
+                  {{puntaje}}/10
+                </div>
+                <div>
+                  <div class="competency-name">{{nombre}}</div>
+                  {{#if definicion}}
+                  <div class="competency-definition">{{definicion}}</div>
+                  {{/if}}
+                </div>
               </div>
-              <div>
-                <div class="competency-name">{{nombre}}</div>
-                {{#if definicion}}
-                <div class="competency-definition">{{definicion}}</div>
-                {{/if}}
+              <div class="competency-description">
+                {{descripcion}}
               </div>
+              {{#if analisisDetallado}}
+              <div class="competency-analysis">
+                {{analisisDetallado}}
+              </div>
+              {{/if}}
             </div>
-            <div class="competency-description">
-              {{descripcion}}
-            </div>
-            {{#if analisisDetallado}}
-            <div class="competency-analysis">
-              {{analisisDetallado}}
-            </div>
-            {{/if}}
-          </div>
-        {{/each}}
+          {{/each}}
+        </div>
       </div>
     </div>
-  </div>
+    {{/if}}
+
+    <!-- Segunda parte de oportunidades -->
+    {{#if competenciasAgrupadas.oportunidadesParte2}}
+    <div class="page">
+      {{> header}}
+
+      <h2 class="section-title">Detalle por Competencia</h2>
+
+      <div class="competency-group">
+        <h3 class="competency-group-title">
+          Competencias a desarrollar (Nivel Bajo o muy bajo) - Parte 2
+        </h3>
+
+        <div class="competencies-container distribute-even">
+          {{#each competenciasAgrupadas.oportunidadesParte2}}
+            <div class="competency-card competency-low {{../competenciasAgrupadas.oportunidadesParte2SizeClass}}">
+              <div class="competency-header">
+                <div class="competency-badge {{#if (lt puntaje 3)}}badge-dark-red{{else}}badge-red{{/if}}">
+                  {{puntaje}}/10
+                </div>
+                <div>
+                  <div class="competency-name">{{nombre}}</div>
+                  {{#if definicion}}
+                  <div class="competency-definition">{{definicion}}</div>
+                  {{/if}}
+                </div>
+              </div>
+              <div class="competency-description">
+                {{descripcion}}
+              </div>
+              {{#if analisisDetallado}}
+              <div class="competency-analysis">
+                {{analisisDetallado}}
+              </div>
+              {{/if}}
+            </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+    {{/if}}
+  {{else}}
+    {{#if competenciasAgrupadas.oportunidades}}
+    <div class="page">
+      {{> header}}
+
+      <h2 class="section-title">Detalle por Competencia</h2>
+
+      <div class="competency-group">
+        <h3 class="competency-group-title">
+          Competencias a desarrollar (Nivel Bajo o muy bajo)
+        </h3>
+
+        <div class="competencies-container distribute-even">
+          {{#each competenciasAgrupadas.oportunidades}}
+            <div class="competency-card competency-low {{../competenciasAgrupadas.oportunidadesSizeClass}}">
+              <div class="competency-header">
+                <div class="competency-badge {{#if (lt puntaje 3)}}badge-dark-red{{else}}badge-red{{/if}}">
+                  {{puntaje}}/10
+                </div>
+                <div>
+                  <div class="competency-name">{{nombre}}</div>
+                  {{#if definicion}}
+                  <div class="competency-definition">{{definicion}}</div>
+                  {{/if}}
+                </div>
+              </div>
+              <div class="competency-description">
+                {{descripcion}}
+              </div>
+              {{#if analisisDetallado}}
+              <div class="competency-analysis">
+                {{analisisDetallado}}
+              </div>
+              {{/if}}
+            </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+    {{/if}}
   {{/if}}
 
   <!-- Página 5: Análisis de Empleabilidad con GAP Analysis y Fortalezas -->

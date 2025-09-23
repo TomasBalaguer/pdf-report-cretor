@@ -25,6 +25,18 @@ handlebars.registerHelper('if', function(conditional, options) {
 });
 
 /**
+ * Determina la clase CSS según la cantidad de competencias
+ * @param {Number} count - Cantidad de competencias
+ * @returns {String} - Clase CSS correspondiente
+ */
+function getSizeClassForCount(count) {
+  if (count <= 3) return 'card-xl';
+  else if (count <= 5) return 'card-lg';
+  else if (count <= 7) return 'card-md';
+  else return 'card-sm';
+}
+
+/**
  * Detecta la ruta del ejecutable de Chromium
  * @returns {String|null} - Ruta del ejecutable o null si no se encuentra
  */
@@ -183,39 +195,46 @@ async function prepareReportData(data) {
 
   // Agrupar competencias por categoría
   if (data.competencias) {
-    reportData.competenciasAgrupadas = agruparCompetencias(data.competencias);
+    const competenciasBase = agruparCompetencias(data.competencias);
+    reportData.competenciasAgrupadas = {};
 
-    // Calcular altura dinámica para cada grupo de competencias
-    // Altura disponible aproximada: 210mm (después del header y título)
-    const ALTURA_DISPONIBLE_MM = 210;
-
-    // Calcular clase CSS según cantidad de competencias para cada grupo
+    // Procesar cada grupo y dividir si es necesario
     ['fortalezas', 'desarrollo', 'oportunidades'].forEach(grupo => {
-      if (reportData.competenciasAgrupadas[grupo]) {
-        const count = reportData.competenciasAgrupadas[grupo].length;
-        if (count > 0) {
-          // Calcular altura por tarjeta (en mm)
-          const alturaCard = Math.floor(ALTURA_DISPONIBLE_MM / count);
-          // Determinar clase CSS basada en la cantidad
-          let sizeClass = 'card-auto';
-          if (count <= 3) sizeClass = 'card-xl';
-          else if (count <= 5) sizeClass = 'card-lg';
-          else if (count <= 8) sizeClass = 'card-md';
-          else if (count <= 12) sizeClass = 'card-sm';
-          else sizeClass = 'card-xs';
+      if (competenciasBase[grupo] && competenciasBase[grupo].length > 0) {
+        const competencias = competenciasBase[grupo];
+        const count = competencias.length;
 
-          reportData.competenciasAgrupadas[`${grupo}SizeClass`] = sizeClass;
+        // Si hay más de 7 competencias, dividir en dos páginas
+        if (count > 7) {
+          const mitad = Math.ceil(count / 2);
+          reportData.competenciasAgrupadas[`${grupo}Parte1`] = competencias.slice(0, mitad);
+          reportData.competenciasAgrupadas[`${grupo}Parte2`] = competencias.slice(mitad);
+
+          // Calcular tamaño para cada parte
+          const sizeClass1 = getSizeClassForCount(mitad);
+          const sizeClass2 = getSizeClassForCount(count - mitad);
+
+          reportData.competenciasAgrupadas[`${grupo}Parte1SizeClass`] = sizeClass1;
+          reportData.competenciasAgrupadas[`${grupo}Parte2SizeClass`] = sizeClass2;
+          reportData.competenciasAgrupadas[`${grupo}Dividido`] = true;
+        } else {
+          // Si hay 7 o menos, mantener en una sola página
+          reportData.competenciasAgrupadas[grupo] = competencias;
+          reportData.competenciasAgrupadas[`${grupo}SizeClass`] = getSizeClassForCount(count);
           reportData.competenciasAgrupadas[`${grupo}Count`] = count;
         }
       }
     });
 
     // Crear listas de fortalezas y oportunidades
-    reportData.fortalezasList = reportData.competenciasAgrupadas.fortalezas
+    const fortalezasArray = competenciasBase.fortalezas || [];
+    const oportunidadesArray = competenciasBase.oportunidades || [];
+
+    reportData.fortalezasList = fortalezasArray
       .slice(0, 5)
       .map(c => c.nombre);
 
-    reportData.oportunidadesList = reportData.competenciasAgrupadas.oportunidades
+    reportData.oportunidadesList = oportunidadesArray
       .slice(0, 5)
       .map(c => c.nombre);
   }
