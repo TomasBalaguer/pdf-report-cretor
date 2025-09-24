@@ -1,8 +1,8 @@
 const { ChartJSNodeCanvas } = require('chartjs-node-canvas');
 
 // Configuración del canvas para Chart.js
-const width = 400;
-const height = 400;
+const width = 600;
+const height = 600;
 const backgroundColour = 'transparent';
 const chartJSNodeCanvas = new ChartJSNodeCanvas({
   width,
@@ -100,12 +100,12 @@ async function generateRadarChart(data) {
             },
             pointLabels: {
               font: {
-                size: 12,
+                size: 14,
                 weight: '500',
                 family: "'Segoe UI', 'Arial', sans-serif"
               },
               color: '#333',
-              padding: 10
+              padding: 20
             },
             angleLines: {
               color: 'rgba(0, 0, 0, 0.1)',

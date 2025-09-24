@@ -17,28 +17,65 @@ function validateReportData(data) {
     } else if (!isValidEmail(data.datosPersonales.email)) {
       errors.push('datosPersonales.email no es válido');
     }
-    if (!data.datosPersonales.perfilObjetivo) {
-      errors.push('datosPersonales.perfilObjetivo es requerido');
-    }
+    // perfilObjetivo es opcional ya que no se usa en el template
   }
 
-  // Validar competencias
-  if (!data.competencias || !Array.isArray(data.competencias)) {
-    errors.push('competencias debe ser un array');
-  } else if (data.competencias.length === 0) {
-    errors.push('Debe incluir al menos una competencia');
+  // Validar competencias - acepta tanto array como objeto con altas/medias/bajas
+  if (!data.competencias) {
+    errors.push('competencias es requerido');
+  } else if (Array.isArray(data.competencias)) {
+    // Formato antiguo: array de competencias
+    if (data.competencias.length === 0) {
+      errors.push('Debe incluir al menos una competencia');
+    } else {
+      data.competencias.forEach((comp, index) => {
+        if (!comp.nombre) {
+          errors.push(`competencias[${index}].nombre es requerido`);
+        }
+        if (typeof comp.puntaje !== 'number' || comp.puntaje < 1 || comp.puntaje > 10) {
+          errors.push(`competencias[${index}].puntaje debe ser un número entre 1 y 10`);
+        }
+        if (!comp.descripcion) {
+          errors.push(`competencias[${index}].descripcion es requerido`);
+        }
+      });
+    }
+  } else if (typeof data.competencias === 'object') {
+    // Nuevo formato: objeto con altas/medias/bajas
+    const validateCompetencyArray = (arr, type) => {
+      if (arr && !Array.isArray(arr)) {
+        errors.push(`competencias.${type} debe ser un array`);
+      } else if (arr) {
+        arr.forEach((comp, index) => {
+          if (!comp.nombre) {
+            errors.push(`competencias.${type}[${index}].nombre es requerido`);
+          }
+          if (typeof comp.puntaje !== 'number' || comp.puntaje < 1 || comp.puntaje > 10) {
+            errors.push(`competencias.${type}[${index}].puntaje debe ser un número entre 1 y 10`);
+          }
+          if (!comp.descripcion) {
+            errors.push(`competencias.${type}[${index}].descripcion es requerido`);
+          }
+        });
+      }
+    };
+
+    // Validar cada grupo de competencias
+    validateCompetencyArray(data.competencias.altas, 'altas');
+    validateCompetencyArray(data.competencias.medias, 'medias');
+    validateCompetencyArray(data.competencias.bajas, 'bajas');
+
+    // Verificar que haya al menos una competencia en total
+    const totalCompetencias =
+      (data.competencias.altas?.length || 0) +
+      (data.competencias.medias?.length || 0) +
+      (data.competencias.bajas?.length || 0);
+
+    if (totalCompetencias === 0) {
+      errors.push('Debe incluir al menos una competencia en altas, medias o bajas');
+    }
   } else {
-    data.competencias.forEach((comp, index) => {
-      if (!comp.nombre) {
-        errors.push(`competencias[${index}].nombre es requerido`);
-      }
-      if (typeof comp.puntaje !== 'number' || comp.puntaje < 1 || comp.puntaje > 10) {
-        errors.push(`competencias[${index}].puntaje debe ser un número entre 1 y 10`);
-      }
-      if (!comp.descripcion) {
-        errors.push(`competencias[${index}].descripcion es requerido`);
-      }
-    });
+    errors.push('competencias debe ser un array o un objeto con propiedades altas/medias/bajas');
   }
 
   // Validar análisis de empleabilidad

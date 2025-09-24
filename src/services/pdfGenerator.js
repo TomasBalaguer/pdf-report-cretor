@@ -25,15 +25,12 @@ handlebars.registerHelper('if', function(conditional, options) {
 });
 
 /**
- * Determina la clase CSS según la cantidad de competencias
- * @param {Number} count - Cantidad de competencias
- * @returns {String} - Clase CSS correspondiente
+ * Retorna la clase CSS fija para las cards
+ * @param {Number} count - Cantidad de competencias (no usado ahora)
+ * @returns {String} - Clase CSS fija
  */
 function getSizeClassForCount(count) {
-  if (count <= 3) return 'card-xl';
-  else if (count <= 5) return 'card-lg';
-  else if (count <= 7) return 'card-md';
-  else return 'card-sm';
+  return 'card-fixed'; // Siempre usar tamaño fijo para 6 cards por página
 }
 
 /**
@@ -213,50 +210,44 @@ async function prepareReportData(data) {
     }
   }
 
-  // Agrupar competencias por categoría
+  // Procesar competencias - ahora vienen ya separadas en altas, medias y bajas
   if (data.competencias) {
-    const competenciasBase = agruparCompetencias(data.competencias);
-    reportData.competenciasAgrupadas = {};
+    // Si las competencias vienen en el formato antiguo (array), convertir al nuevo formato
+    if (Array.isArray(data.competencias)) {
+      const competenciasAgrupadas = agruparCompetencias(data.competencias);
+      reportData.competencias = {
+        altas: competenciasAgrupadas.fortalezas || [],
+        medias: competenciasAgrupadas.desarrollo || [],
+        bajas: competenciasAgrupadas.oportunidades || []
+      };
+    } else {
+      // Usar directamente el nuevo formato
+      reportData.competencias = {
+        altas: data.competencias.altas || [],
+        medias: data.competencias.medias || [],
+        bajas: data.competencias.bajas || []
+      };
+    }
 
-    // Procesar cada grupo y dividir si es necesario
-    ['fortalezas', 'desarrollo', 'oportunidades'].forEach(grupo => {
-      if (competenciasBase[grupo] && competenciasBase[grupo].length > 0) {
-        const competencias = competenciasBase[grupo];
-        const count = competencias.length;
+    // Calcular tamaño de las tarjetas según cantidad
+    if (reportData.competencias.altas.length > 0) {
+      reportData.competencias.altasSizeClass = getSizeClassForCount(reportData.competencias.altas.length);
+    }
+    if (reportData.competencias.medias.length > 0) {
+      reportData.competencias.mediasSizeClass = getSizeClassForCount(reportData.competencias.medias.length);
+    }
+    if (reportData.competencias.bajas.length > 0) {
+      reportData.competencias.bajasSizeClass = getSizeClassForCount(reportData.competencias.bajas.length);
+    }
 
-        // Si hay más de 7 competencias, dividir en dos páginas
-        if (count > 7) {
-          const mitad = Math.ceil(count / 2);
-          reportData.competenciasAgrupadas[`${grupo}Parte1`] = competencias.slice(0, mitad);
-          reportData.competenciasAgrupadas[`${grupo}Parte2`] = competencias.slice(mitad);
-
-          // Calcular tamaño para cada parte
-          const sizeClass1 = getSizeClassForCount(mitad);
-          const sizeClass2 = getSizeClassForCount(count - mitad);
-
-          reportData.competenciasAgrupadas[`${grupo}Parte1SizeClass`] = sizeClass1;
-          reportData.competenciasAgrupadas[`${grupo}Parte2SizeClass`] = sizeClass2;
-          reportData.competenciasAgrupadas[`${grupo}Dividido`] = true;
-        } else {
-          // Si hay 7 o menos, mantener en una sola página
-          reportData.competenciasAgrupadas[grupo] = competencias;
-          reportData.competenciasAgrupadas[`${grupo}SizeClass`] = getSizeClassForCount(count);
-          reportData.competenciasAgrupadas[`${grupo}Count`] = count;
-        }
-      }
-    });
-
-    // Crear listas de fortalezas y oportunidades
-    const fortalezasArray = competenciasBase.fortalezas || [];
-    const oportunidadesArray = competenciasBase.oportunidades || [];
-
-    reportData.fortalezasList = fortalezasArray
+    // Crear listas de fortalezas y oportunidades para el resumen
+    reportData.fortalezasList = reportData.competencias.altas
       .slice(0, 5)
       .map(c => c.nombre);
 
-    reportData.oportunidadesList = oportunidadesArray
-      .slice(0, 5)
-      .map(c => c.nombre);
+    reportData.oportunidadesList = reportData.competencias.bajas.length > 0
+      ? reportData.competencias.bajas.slice(0, 5).map(c => c.nombre)
+      : reportData.competencias.medias.slice(0, 5).map(c => c.nombre);
   }
 
   // Procesar GAP analysis si existe
