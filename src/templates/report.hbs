@@ -9,7 +9,7 @@
   </style>
 </head>
 <body>
-  <!-- Página 1: Portada y Resumen Ejecutivo -->
+  {{!-- Página 1: Portada con datos personales y gráfico --}}
   <div class="page">
     {{> header}}
 
@@ -43,38 +43,81 @@
             <circle cx="12" cy="12" r="4" fill="white"/>
           </svg>
         </div>
-        <span class="info-label">Perfil Objetivo:</span>
-        <span class="info-value">{{datosPersonales.perfilObjetivo}}</span>
-      </div>
-      <div class="info-item">
-        <div class="info-icon">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
-            <circle cx="12" cy="12" r="10" stroke="white" stroke-width="2" fill="none"/>
-            <circle cx="12" cy="12" r="4" fill="white"/>
-          </svg>
-        </div>
         <span class="info-label">Fecha de Test:</span>
         <span class="info-value">{{datosPersonales.fechaTest}}</span>
       </div>
     </div>
 
-    {{> executive-summary}}
+    <h2 class="section-title">Resumen de Competencias</h2>
+
+    <div class="chart-container-large">
+      {{#if chartRadar}}
+        <img src="{{chartRadar}}" alt="Gráfico de competencias" class="radar-chart-large">
+      {{/if}}
+    </div>
   </div>
 
-  <!-- Página 2: Competencias destacadas -->
+  {{!-- Página 2: Perfil General, Fortalezas y Oportunidades --}}
+  <div class="page">
+    {{> header}}
+
+    <h2 class="section-title">Resumen Ejecutivo</h2>
+
+    <div class="profile-box">
+      <h3>Perfil General:</h3>
+      <p>
+        {{#if perfilGeneral.resumenDescriptivo}}
+          {{perfilGeneral.resumenDescriptivo}}
+        {{else}}
+          (Resumen descriptivo de la personalidad)
+        {{/if}}
+      </p>
+    </div>
+
+    <div class="competency-lists">
+      <div class="list-section strengths-box">
+        <h3>Fortalezas:</h3>
+        <ul>
+          {{#each fortalezasList}}
+            <li>{{this}}</li>
+          {{/each}}
+        </ul>
+      </div>
+
+      <div class="list-section opportunities-box">
+        <h3>Áreas de Oportunidad:</h3>
+        <ul>
+          {{#each oportunidadesList}}
+            <li>{{this}}</li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+
+    <div class="profile-box" style="margin-top: 20px;">
+      <h3>Metodología:</h3>
+      <p>
+        {{#if perfilGeneral.metodologia}}
+          {{perfilGeneral.metodologia}}
+        {{else}}
+          Análisis basado en competencias profesionales y habilidades blandas mediante evaluación multidimensional.
+        {{/if}}
+      </p>
+    </div>
+  </div>
+
+  {{!-- Página de Detalle por Competencia --}}
   {{#if competenciasAgrupadas.fortalezasDividido}}
-    <!-- Primera parte de fortalezas -->
     {{#if competenciasAgrupadas.fortalezasParte1}}
     <div class="page">
       {{> header}}
 
       <h2 class="section-title">Detalle por Competencia</h2>
 
-      <div class="competency-group">
+      <div class="competency-group" style="margin-top: 20px;">
         <h3 class="competency-group-title">
           Competencias destacadas (Nivel Alto [7/8] o Excepcional [9/10]) - Parte 1
         </h3>
-
         <div class="competencies-container distribute-even">
           {{#each competenciasAgrupadas.fortalezasParte1}}
             <div class="competency-card competency-high {{../competenciasAgrupadas.fortalezasParte1SizeClass}}">
@@ -102,18 +145,16 @@
     </div>
     {{/if}}
 
-    <!-- Segunda parte de fortalezas -->
+  {{!-- Segunda parte de fortalezas en nueva página --}}
+  {{#if competenciasAgrupadas.fortalezasDividido}}
     {{#if competenciasAgrupadas.fortalezasParte2}}
     <div class="page">
       {{> header}}
 
-      <h2 class="section-title">Detalle por Competencia</h2>
-
-      <div class="competency-group">
+      <div class="competency-group" style="margin-top: 20px;">
         <h3 class="competency-group-title">
           Competencias destacadas (Nivel Alto [7/8] o Excepcional [9/10]) - Parte 2
         </h3>
-
         <div class="competencies-container distribute-even">
           {{#each competenciasAgrupadas.fortalezasParte2}}
             <div class="competency-card competency-high {{../competenciasAgrupadas.fortalezasParte2SizeClass}}">
@@ -140,6 +181,7 @@
       </div>
     </div>
     {{/if}}
+  {{/if}}
   {{else}}
     {{#if competenciasAgrupadas.fortalezas}}
     <div class="page">
@@ -147,11 +189,10 @@
 
       <h2 class="section-title">Detalle por Competencia</h2>
 
-      <div class="competency-group">
+      <div class="competency-group" style="margin-top: 20px;">
         <h3 class="competency-group-title">
           Competencias destacadas (Nivel Alto [7/8] o Excepcional [9/10])
         </h3>
-
         <div class="competencies-container distribute-even">
           {{#each competenciasAgrupadas.fortalezas}}
             <div class="competency-card competency-high {{../competenciasAgrupadas.fortalezasSizeClass}}">
@@ -180,16 +221,13 @@
     {{/if}}
   {{/if}}
 
-  <!-- Competencias en desarrollo -->
+  {{!-- Nueva página para competencias en desarrollo --}}
   {{#if competenciasAgrupadas.desarrolloDividido}}
-    <!-- Primera parte de desarrollo -->
     {{#if competenciasAgrupadas.desarrolloParte1}}
     <div class="page">
       {{> header}}
 
-      <h2 class="section-title">Detalle por Competencia</h2>
-
-      <div class="competency-group">
+      <div class="competency-group" style="margin-top: 20px;">
         <h3 class="competency-group-title">
           Competencias en vías de desarrollo (Nivel Medio [5/6]) - Parte 1
         </h3>
@@ -221,14 +259,11 @@
     </div>
     {{/if}}
 
-    <!-- Segunda parte de desarrollo -->
     {{#if competenciasAgrupadas.desarrolloParte2}}
     <div class="page">
       {{> header}}
 
-      <h2 class="section-title">Detalle por Competencia</h2>
-
-      <div class="competency-group">
+      <div class="competency-group" style="margin-top: 20px;">
         <h3 class="competency-group-title">
           Competencias en vías de desarrollo (Nivel Medio [5/6]) - Parte 2
         </h3>
@@ -264,9 +299,7 @@
     <div class="page">
       {{> header}}
 
-      <h2 class="section-title">Detalle por Competencia</h2>
-
-      <div class="competency-group">
+      <div class="competency-group" style="margin-top: 20px;">
         <h3 class="competency-group-title">
           Competencias en vías de desarrollo (Nivel Medio [5/6])
         </h3>
@@ -298,17 +331,12 @@
     </div>
     {{/if}}
   {{/if}}
-
-  <!-- Competencias a desarrollar -->
   {{#if competenciasAgrupadas.oportunidadesDividido}}
-    <!-- Primera parte de oportunidades -->
     {{#if competenciasAgrupadas.oportunidadesParte1}}
     <div class="page">
       {{> header}}
 
-      <h2 class="section-title">Detalle por Competencia</h2>
-
-      <div class="competency-group">
+      <div class="competency-group" style="margin-top: 20px;">
         <h3 class="competency-group-title">
           Competencias a desarrollar (Nivel Bajo o muy bajo) - Parte 1
         </h3>
@@ -342,14 +370,11 @@
     </div>
     {{/if}}
 
-    <!-- Segunda parte de oportunidades -->
     {{#if competenciasAgrupadas.oportunidadesParte2}}
     <div class="page">
       {{> header}}
 
-      <h2 class="section-title">Detalle por Competencia</h2>
-
-      <div class="competency-group">
+      <div class="competency-group" style="margin-top: 20px;">
         <h3 class="competency-group-title">
           Competencias a desarrollar (Nivel Bajo o muy bajo) - Parte 2
         </h3>
@@ -387,9 +412,7 @@
     <div class="page">
       {{> header}}
 
-      <h2 class="section-title">Detalle por Competencia</h2>
-
-      <div class="competency-group">
+      <div class="competency-group" style="margin-top: 20px;">
         <h3 class="competency-group-title">
           Competencias a desarrollar (Nivel Bajo o muy bajo)
         </h3>
@@ -424,13 +447,14 @@
     {{/if}}
   {{/if}}
 
-  <!-- Página 5: Análisis de Empleabilidad con GAP Analysis y Fortalezas -->
+  {{!-- TEMPORALMENTE COMENTADO: Análisis de Empleabilidad
   <div class="page">
     {{> header}}
     {{> employability}}
   </div>
+  --}}
 
-  <!-- Página 6: Timeline y Plan de Acción -->
+  {{!-- TEMPORALMENTE COMENTADO: Timeline y Plan de Acción
   <div class="page">
     {{> header}}
 
@@ -454,8 +478,9 @@
 
     {{> action-plan}}
   </div>
+  --}}
 
-  <!-- Página 8: Conclusiones -->
+  {{!-- Página de Conclusiones (MANTENER ACTIVA) --}}
   <div class="page">
     {{> header}}
 

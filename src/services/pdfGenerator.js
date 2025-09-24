@@ -144,6 +144,26 @@ async function generateReport(data, outputPath) {
       timeout: 30000
     });
 
+    // Inyectar JavaScript para limpiar páginas vacías
+    await page.evaluate(() => {
+      // Encontrar todos los elementos .page
+      const pages = document.querySelectorAll('.page');
+      pages.forEach(page => {
+        // Verificar si la página está efectivamente vacía o solo tiene el header
+        const hasContent = Array.from(page.children).some(child => {
+          // Ignorar headers vacíos
+          if (child.classList.contains('header')) return false;
+          // Verificar si tiene contenido real
+          return child.textContent.trim().length > 0;
+        });
+
+        // Si no hay contenido real, remover la página
+        if (!hasContent) {
+          page.remove();
+        }
+      });
+    });
+
     // Esperar a que se carguen las imágenes
     await new Promise(resolve => setTimeout(resolve, 1000));
 

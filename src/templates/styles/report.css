@@ -41,6 +41,10 @@ body {
   position: relative;
 }
 
+.page:last-child {
+  page-break-after: auto;
+}
+
 /* Header con logos */
 .header {
   display: flex;
@@ -48,6 +52,7 @@ body {
   align-items: center;
   margin-bottom: 15px;
   padding-bottom: 10px;
+  min-height: 65px;
 }
 
 .header-left {
@@ -57,7 +62,7 @@ body {
 }
 
 .header-left img {
-  height: 60px;
+  max-height: 65px;
   width: auto;
 }
 
@@ -245,12 +250,236 @@ body {
   object-fit: contain;
 }
 
+/* Gráfico grande en resumen ejecutivo */
+.chart-container-large {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0 30px 0;
+}
+
+.radar-chart-large {
+  width: 420px;
+  height: 420px;
+  object-fit: contain;
+}
+
+/* Información compacta debajo del gráfico */
+.executive-summary-info {
+  margin-top: 20px;
+}
+
+.summary-row {
+  margin-bottom: 15px;
+}
+
+.profile-box-compact {
+  background: var(--blue-bg);
+  padding: 12px 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.profile-box-compact h3 {
+  color: var(--primary-blue);
+  font-size: 13px;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.profile-box-compact p {
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.competency-lists-compact {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.list-section-compact {
+  border-radius: 8px;
+  padding: 10px 12px;
+  border: 1px solid;
+}
+
+.list-section-compact.strengths-box {
+  background: #E8F5E9;
+  border-color: #C8E6C9;
+}
+
+.list-section-compact.opportunities-box {
+  background: #FFF3E0;
+  border-color: #FFE0B2;
+}
+
+.list-section-compact h3 {
+  font-size: 12px;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.list-section-compact ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list-section-compact li {
+  font-size: 10px;
+  color: var(--text-secondary);
+  padding: 2px 0;
+  padding-left: 12px;
+  position: relative;
+}
+
+.list-section-compact li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--primary-blue);
+}
+
+.methodology-box {
+  background: #F3F4F6;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #E5E7EB;
+}
+
+.methodology-box h3 {
+  color: var(--text-primary);
+  font-size: 12px;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.methodology-box p {
+  font-size: 10px;
+  line-height: 1.4;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Estilos para páginas completas de perfil y competencias */
+.profile-section-full {
+  background: var(--blue-bg);
+  padding: 30px;
+  border-radius: 12px;
+  margin: 30px 0;
+}
+
+.profile-description {
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--text-primary);
+  text-align: justify;
+}
+
+.methodology-section-full {
+  background: #F9FAFB;
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid #E5E7EB;
+  margin-top: 30px;
+}
+
+.methodology-section-full h3 {
+  color: var(--primary-blue);
+  font-size: 16px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.methodology-section-full p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.competency-analysis-full {
+  margin-top: 30px;
+}
+
+.strengths-section-full,
+.opportunities-section-full {
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+}
+
+.strengths-section-full {
+  background: #E8F5E9;
+  border: 1px solid #C8E6C9;
+}
+
+.opportunities-section-full {
+  background: #FFF3E0;
+  border: 1px solid #FFE0B2;
+}
+
+.strengths-section-full h3,
+.opportunities-section-full h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.strengths-section-full h3 {
+  color: #2E7D32;
+}
+
+.opportunities-section-full h3 {
+  color: #F57C00;
+}
+
+.section-intro {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 15px;
+  font-style: italic;
+}
+
+.competency-list-full {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.competency-list-full li {
+  font-size: 14px;
+  color: var(--text-primary);
+  padding: 8px 0;
+  padding-left: 25px;
+  position: relative;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.competency-list-full li:last-child {
+  border-bottom: none;
+}
+
+.competency-list-full li:before {
+  content: "▸";
+  position: absolute;
+  left: 5px;
+  color: var(--primary-blue);
+  font-weight: bold;
+}
+
 /* Listas de fortalezas y áreas */
 .competency-lists {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 15px;
   margin-top: 15px;
+  margin-bottom: 25px;
 }
 
 .list-section {
@@ -652,7 +881,6 @@ body {
 
 /* Contenedor de grupo de competencias */
 .competency-group {
-  page-break-inside: avoid;
   margin-bottom: 20px;
 }
 
@@ -663,6 +891,7 @@ body {
   font-weight: 600;
   padding-bottom: 6px;
   border-bottom: 2px solid var(--gray-bg);
+  page-break-after: avoid;
 }
 
 /* Asegurar que todas las competencias del mismo color quepan en una página */

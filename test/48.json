@@ -1,43 +1,43 @@
 {
     "company": {
-        "name": "Empresa",
-        "image_url": ""
+        "name": "Universidad Técnica Federico Santa Maria",
+        "image_url": "https://fls-9fd68e5e-6b36-4f55-9c85-1f292e9a0e82.laravel.cloud/company_logos/logo_5_1757551142.jpg"
     },
     "planAccion": {
         "fases": [
             {
                 "numero": 1,
                 "duracion": "0-6 meses",
-                "descripcion": "Establecer bases de autorregulación emocional"
+                "descripcion": "Dominar técnicas de gestión emocional y resiliencia"
             },
             {
                 "numero": 2,
                 "duracion": "6-12 meses",
-                "descripcion": "Consolidar habilidades de gestión de crisis"
+                "descripcion": "Desarrollar competencias de innovación e influencia"
             },
             {
                 "numero": 3,
                 "duracion": "12-18 meses",
-                "descripcion": "Implementar innovaciones en procesos de calidad"
+                "descripcion": "Consolidar posición como referente en calidad y compliance"
             }
         ],
-        "proximoPaso": "Inscripción en programa de gestión del estrés",
+        "proximoPaso": "Inscripción en programa de gestión del estrés y regulación emocional",
         "propuestasDesarrollo": [
             {
                 "titulo": "Gestión del Estrés",
-                "descripcion": "Programa de mindfulness y técnicas de autorregulación"
+                "descripcion": "Programa de mindfulness y técnicas de gestión de presión laboral"
             },
             {
-                "titulo": "Resiliencia",
-                "descripcion": "Mentoring con profesionales experimentados del sector"
+                "titulo": "Resolución Creativa",
+                "descripcion": "Workshops de innovación en procesos de calidad y compliance"
             },
             {
-                "titulo": "Tolerancia",
-                "descripcion": "Workshops de manejo de situaciones críticas"
+                "titulo": "Habilidades de Influencia",
+                "descripcion": "Entrenamiento en comunicación persuasiva y gestión de stakeholders"
             },
             {
-                "titulo": "Creatividad",
-                "descripcion": "Participación en proyectos de mejora continua"
+                "titulo": "Liderazgo Técnico",
+                "descripcion": "Certificación en sistemas de gestión de calidad"
             }
         ]
     },
@@ -45,122 +45,122 @@
         {
             "nombre": "Perseverancia",
             "puntaje": 8,
-            "definicion": "Capacidad de mantener el esfuerzo constante hacia los objetivos",
-            "descripcion": "Alta persistencia en logros académicos y profesionales",
-            "analisisDetallado": "Demuestra constancia en estudios de maestría y mejora continua en procesos de auditoría"
-        },
-        {
-            "nombre": "Pensamiento Crítico",
-            "puntaje": 9,
-            "definicion": "Capacidad de análisis y evaluación objetiva",
-            "descripcion": "Fuerte capacidad analítica en procesos técnicos",
-            "analisisDetallado": "Evidencia clara evaluación de situaciones complejas en auditorías y toma de decisiones"
-        },
-        {
-            "nombre": "Responsabilidad",
-            "puntaje": 9,
-            "definicion": "Compromiso con obligaciones y resultados",
-            "descripcion": "Alto nivel de compromiso con objetivos organizacionales",
-            "analisisDetallado": "Demuestra gran sentido de responsabilidad en gestión de procesos críticos"
-        },
-        {
-            "nombre": "Regulación Emocional",
-            "puntaje": 8,
-            "definicion": "Capacidad de gestionar emociones efectivamente",
-            "descripcion": "Buen manejo de situaciones de presión",
-            "analisisDetallado": "Mantiene calma y objetividad en discusiones profesionales y situaciones de conflicto"
-        },
-        {
-            "nombre": "Autoconocimiento",
-            "puntaje": 8,
-            "definicion": "Comprensión de fortalezas y áreas de mejora propias",
-            "descripcion": "Clara consciencia de capacidades personales",
-            "analisisDetallado": "Reconoce sus áreas de desarrollo y busca activamente mejorarlas"
-        },
-        {
-            "nombre": "Asertividad",
-            "puntaje": 8,
-            "definicion": "Capacidad de expresar opiniones de manera efectiva",
-            "descripcion": "Comunicación clara y directa",
-            "analisisDetallado": "Maneja efectivamente discusiones profesionales manteniendo respeto mutuo"
-        },
-        {
-            "nombre": "Construcción Relaciones",
-            "puntaje": 8,
-            "definicion": "Habilidad para crear vínculos profesionales",
-            "descripcion": "Buena capacidad de trabajo en equipo",
-            "analisisDetallado": "Desarrolla relaciones efectivas con colegas y stakeholders"
-        },
-        {
-            "nombre": "Creatividad",
-            "puntaje": 7,
-            "definicion": "Capacidad de generar soluciones innovadoras",
-            "descripcion": "Pensamiento adaptativo y soluciones prácticas",
-            "analisisDetallado": "Demuestra creatividad en resolución de problemas técnicos"
-        },
-        {
-            "nombre": "Empatía",
-            "puntaje": 8,
-            "definicion": "Capacidad de comprender perspectivas ajenas",
-            "descripcion": "Sensibilidad hacia necesidades de otros",
-            "analisisDetallado": "Muestra comprensión y apoyo en situaciones personales y profesionales"
-        },
-        {
-            "nombre": "Liderazgo",
-            "puntaje": 8,
-            "definicion": "Capacidad de guiar y motivar a otros",
-            "descripcion": "Liderazgo técnico efectivo",
-            "analisisDetallado": "Demuestra capacidad para dirigir equipos y procesos"
-        },
-        {
-            "nombre": "Curiosidad",
-            "puntaje": 8,
-            "definicion": "Interés por aprender y explorar",
-            "descripcion": "Búsqueda activa de conocimiento",
-            "analisisDetallado": "Muestra interés continuo en desarrollo profesional y personal"
-        },
-        {
-            "nombre": "Tolerancia Frustración",
-            "puntaje": 7,
-            "definicion": "Capacidad de manejar contratiempos",
-            "descripcion": "Manejo adecuado de situaciones adversas",
-            "analisisDetallado": "Afronta constructivamente resultados no esperados"
+            "definicion": "Capacidad de mantener el esfuerzo y compromiso hacia objetivos a largo plazo",
+            "descripcion": "Demuestra constancia en proyectos profesionales y personales",
+            "analisisDetallado": "Evidencia clara perseverancia en su desarrollo profesional, especialmente en la realización de su maestría y mejora continua de procesos. Su tono de voz constante y estructurado refleja determinación sostenida."
         },
         {
             "nombre": "Resiliencia",
             "puntaje": 7,
-            "definicion": "Capacidad de recuperación ante adversidades",
-            "descripcion": "Adaptación positiva ante dificultades",
-            "analisisDetallado": "Demuestra capacidad de recuperación ante desafíos profesionales"
+            "definicion": "Capacidad de recuperarse y adaptarse ante la adversidad",
+            "descripcion": "Muestra capacidad de adaptación ante desafíos profesionales",
+            "analisisDetallado": "Demuestra resiliencia moderada al enfrentar resultados de auditoría y conflictos laborales. Su respuesta prosódica indica calma ante situaciones de presión."
         },
         {
-            "nombre": "Influencia",
-            "puntaje": 7,
-            "definicion": "Capacidad de impactar en otros",
-            "descripcion": "Persuasión efectiva en contexto profesional",
-            "analisisDetallado": "Logra influir en decisiones técnicas y procesos"
+            "nombre": "Pensamiento Crítico",
+            "puntaje": 9,
+            "definicion": "Habilidad para analizar información y tomar decisiones fundamentadas",
+            "descripcion": "Destaca en análisis sistemático y evaluación de situaciones",
+            "analisisDetallado": "Exhibe excelente capacidad analítica en la gestión de auditorías y resolución de problemas técnicos. Su discurso estructurado y argumentación coherente reflejan alto pensamiento crítico."
+        },
+        {
+            "nombre": "Regulación Emocional",
+            "puntaje": 8,
+            "definicion": "Capacidad de gestionar y modular las propias emociones",
+            "descripcion": "Mantiene equilibrio emocional en situaciones de presión",
+            "analisisDetallado": "Demuestra buen control emocional en situaciones de conflicto profesional y personal. Su tono consistente y pausado indica madurez emocional."
+        },
+        {
+            "nombre": "Responsabilidad",
+            "puntaje": 9,
+            "definicion": "Compromiso con obligaciones y consecuencias de acciones",
+            "descripcion": "Alto nivel de compromiso con deberes profesionales",
+            "analisisDetallado": "Evidencia fuerte sentido de responsabilidad en gestión de calidad y auditorías. Su atención al detalle y seguimiento de procesos confirman alto nivel de compromiso."
+        },
+        {
+            "nombre": "Autoconocimiento",
+            "puntaje": 8,
+            "definicion": "Comprensión de fortalezas, limitaciones y valores propios",
+            "descripcion": "Buena consciencia de capacidades y áreas de mejora",
+            "analisisDetallado": "Muestra clara comprensión de sus fortalezas y áreas de desarrollo, especialmente en balance vida-trabajo. Su reflexión sobre experiencias pasadas indica madurez personal."
         },
         {
             "nombre": "Manejo del Estrés",
             "puntaje": 7,
-            "definicion": "Gestión efectiva de presión",
-            "descripcion": "Control adecuado en situaciones tensas",
-            "analisisDetallado": "Mantiene efectividad bajo presión en auditorías y deadlines"
+            "definicion": "Capacidad de gestionar presión y situaciones demandantes",
+            "descripcion": "Gestiona adecuadamente situaciones de presión laboral",
+            "analisisDetallado": "Maneja situaciones de estrés con estrategias definidas, aunque muestra cierta tensión en momentos críticos. Su tono revela control moderado bajo presión."
+        },
+        {
+            "nombre": "Asertividad",
+            "puntaje": 8,
+            "definicion": "Capacidad de expresar opiniones y necesidades de manera clara y respetuosa",
+            "descripcion": "Comunica efectivamente ideas y posiciones",
+            "analisisDetallado": "Demuestra asertividad en discusiones profesionales y manejo de desacuerdos. Su comunicación clara y respetuosa evidencia madurez en interacciones."
+        },
+        {
+            "nombre": "Construcción Relaciones",
+            "puntaje": 8,
+            "definicion": "Habilidad para establecer y mantener relaciones positivas",
+            "descripcion": "Desarrolla vínculos profesionales efectivos",
+            "analisisDetallado": "Muestra habilidad para construir relaciones profesionales sólidas y mantener conexiones personales. Su tono empático facilita la construcción de puentes."
+        },
+        {
+            "nombre": "Creatividad",
+            "puntaje": 7,
+            "definicion": "Capacidad de generar ideas originales y soluciones innovadoras",
+            "descripcion": "Aporta soluciones prácticas a desafíos",
+            "analisisDetallado": "Demuestra creatividad moderada en resolución de problemas y reutilización de recursos. Su enfoque práctico combina metodología con innovación."
+        },
+        {
+            "nombre": "Empatía",
+            "puntaje": 8,
+            "definicion": "Capacidad de comprender y compartir sentimientos ajenos",
+            "descripcion": "Muestra comprensión hacia necesidades de otros",
+            "analisisDetallado": "Evidencia alta empatía en situaciones personales y profesionales, especialmente en el caso del vecino enfermo. Su tono cálido refleja genuina preocupación por otros."
+        },
+        {
+            "nombre": "Influencia",
+            "puntaje": 7,
+            "definicion": "Capacidad de impactar positivamente en otros",
+            "descripcion": "Logra influir en equipos y colaboradores",
+            "analisisDetallado": "Demuestra capacidad moderada de influencia en entornos profesionales. Su estilo persuasivo se basa en argumentos técnicos y experiencia."
+        },
+        {
+            "nombre": "Liderazgo",
+            "puntaje": 8,
+            "definicion": "Capacidad de guiar y motivar a otros hacia objetivos comunes",
+            "descripcion": "Dirige efectivamente equipos y proyectos",
+            "analisisDetallado": "Muestra habilidades de liderazgo en gestión de equipos y procesos de calidad. Su estilo directivo combina orientación técnica con desarrollo de personas."
+        },
+        {
+            "nombre": "Curiosidad",
+            "puntaje": 8,
+            "definicion": "Interés por aprender y explorar nuevas ideas",
+            "descripcion": "Mantiene interés activo por aprendizaje continuo",
+            "analisisDetallado": "Demuestra curiosidad en desarrollo profesional y pasiones personales como la música. Su tono animado al discutir nuevos aprendizajes refleja genuino interés."
+        },
+        {
+            "nombre": "Tolerancia Frustración",
+            "puntaje": 7,
+            "definicion": "Capacidad de manejar decepciones y contratiempos",
+            "descripcion": "Maneja adecuadamente situaciones adversas",
+            "analisisDetallado": "Muestra capacidad moderada para manejar contratiempos, especialmente en resultados de auditoría. Su respuesta mesurada ante dificultades indica madurez profesional."
         }
     ],
     "conclusiones": {
-        "resumenFinal": "Perfil con base sólida para el rol, requiere fortalecer aspectos de gestión emocional y resiliencia para optimizar desempeño en situaciones de alta presión",
-        "recomendacionPrincipal": "Priorizar desarrollo de habilidades de manejo del estrés y resiliencia"
+        "resumenFinal": "Perfil altamente compatible con rol objetivo, requiriendo desarrollo específico en gestión emocional y habilidades de influencia",
+        "recomendacionPrincipal": "Priorizar desarrollo de tolerancia a la frustración y manejo del estrés en próximos 6 meses"
     },
     "perfilGeneral": {
         "metodologia": "Análisis mediante 8 preguntas de audio con evaluación prosódica",
-        "resumenDescriptivo": "Profesional analítico con fuerte orientación a procesos y calidad, demuestra liderazgo técnico y habilidades de gestión de equipos"
+        "resumenDescriptivo": "Profesional metódico con sólida formación técnica y enfoque en calidad. Demuestra capacidad de liderazgo y toma de decisiones, con especial interés en el desarrollo de equipos y mejora continua. Mantiene un balance entre precisión técnica y habilidades interpersonales."
     },
     "datosPersonales": {
         "email": "ggilabert@gasvalpo.cl",
         "nombre": "GONZALO ANDRES GILABERT",
-        "fechaTest": "Diciembre 2024",
-        "perfilObjetivo": "Profesional del área de integridad y calidad, enfocado en verificar cumplimiento de normativas y procedimientos para suministro seguro de gas natural",
+        "fechaTest": "September 2025",
+        "perfilObjetivo": "Profesional del área de integridad y calidad, enfocado en verificar cumplimiento normativo y procedimientos para suministro seguro de gas natural",
         "nombreUniversidad": "No especificada"
     },
     "datosGraficoRadar": {
@@ -223,17 +223,17 @@
             {
                 "fase": "FASE 1 (0-6 meses)",
                 "numero": 1,
-                "descripcion": "Fortalecer manejo de estrés y tolerancia"
+                "descripcion": "Fortalecer manejo de estrés y tolerancia a la frustración mediante capacitación específica"
             },
             {
                 "fase": "FASE 2 (6-12 meses)",
                 "numero": 2,
-                "descripcion": "Desarrollar resiliencia en situaciones críticas"
+                "descripcion": "Desarrollar habilidades de influencia y creatividad en solución de problemas"
             },
             {
                 "fase": "FASE 3 (12-18 meses)",
                 "numero": 3,
-                "descripcion": "Potenciar creatividad en soluciones de calidad"
+                "descripcion": "Consolidar liderazgo en gestión de calidad y mejora continua"
             }
         ],
         "gapAnalysis": [
@@ -247,12 +247,6 @@
                 "gap": 2,
                 "actual": 7,
                 "requerido": 9,
-                "competencia": "Resiliencia"
-            },
-            {
-                "gap": 2,
-                "actual": 7,
-                "requerido": 9,
                 "competencia": "Manejo del Estrés"
             },
             {
@@ -260,25 +254,31 @@
                 "actual": 7,
                 "requerido": 8,
                 "competencia": "Creatividad"
+            },
+            {
+                "gap": 1,
+                "actual": 7,
+                "requerido": 8,
+                "competencia": "Influencia"
             }
         ],
-        "matchGeneral": 80,
-        "situacionActual": "Perfil con sólidas competencias base para el rol de integridad y calidad",
+        "matchGeneral": 85,
+        "situacionActual": "Perfil con sólidas competencias en pensamiento crítico y responsabilidad, alineadas con requerimientos de calidad y cumplimiento",
         "timelineReadiness": "6-12 meses",
         "fortalezasObjetivo": [
             {
                 "nombre": "Pensamiento Crítico",
-                "descripcion": "Fundamental para análisis de normativas y procedimientos"
+                "descripcion": "Facilita análisis detallado de normativas y procedimientos de seguridad"
             },
             {
                 "nombre": "Responsabilidad",
-                "descripcion": "Esencial para garantizar cumplimiento y seguridad"
+                "descripcion": "Garantiza compromiso con estándares de calidad y cumplimiento regulatorio"
             },
             {
                 "nombre": "Perseverancia",
-                "descripcion": "Clave para mantener estándares de calidad consistentes"
+                "descripcion": "Permite mantener consistencia en verificación y mejora continua de procesos"
             }
         ],
-        "objetivoProfesional": "Profesional del área de integridad y calidad en suministro de gas natural"
+        "objetivoProfesional": "Profesional del área de integridad y calidad, enfocado en verificar cumplimiento normativo y procedimientos para suministro seguro de gas natural"
     }
 }

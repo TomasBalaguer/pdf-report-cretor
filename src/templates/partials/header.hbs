@@ -1,24 +1,24 @@
 <div class="header">
   <div class="header-left">
     {{#if company.imageUrl}}
-      <img src="{{company.imageUrl}}" alt="{{company.name}}" style="height: 30px; width: auto; object-fit: contain;">
+      <img src="{{company.imageUrl}}" alt="{{company.name}}" style="height: 85px; width: auto; object-fit: contain;">
     {{else}}
       <div class="universidad-box">
-        <div class="universidad-logo">🏛️</div>
+        <div class="universidad-logo" style="font-size: 36px;">🏛️</div>
         <div class="universidad-text">
-          <div style="font-size: 16px; font-weight: bold; color: var(--primary-blue);">
+          <div style="font-size: 20px; font-weight: bold; color: var(--primary-blue);">
             {{company.name}}
           </div>
-          <div class="subtitle">Programa de desarrollo personal</div>
+          <div class="subtitle" style="font-size: 12px;">Programa de desarrollo personal</div>
         </div>
       </div>
     {{/if}}
   </div>
   <div class="header-right">
     {{#if logoReskilling}}
-      <img src="{{logoReskilling}}" alt="Re-Skilling.AI" style="height: 15px; width: auto;">
+      <img src="{{logoReskilling}}" alt="Re-Skilling.AI" style="height: 12px; width: auto;">
     {{else}}
-      <div class="logo-reskilling">RE-SKILLING.AI</div>
+      <div class="logo-reskilling" style="font-size: 10px;">RE-SKILLING.AI</div>
     {{/if}}
   </div>
 </div>
