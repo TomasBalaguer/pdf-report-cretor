@@ -6,6 +6,7 @@ const { execSync } = require('child_process');
 
 const chartGenerator = require('./chartGenerator');
 const { agruparCompetencias } = require('./validator');
+const { uploadPDF, generateS3Key } = require('./s3Service');
 
 // Registrar helpers de Handlebars
 handlebars.registerHelper('lt', function(a, b) {
@@ -185,6 +186,31 @@ async function generateReport(data, outputPath) {
     });
 
     console.log('✅ PDF generado exitosamente');
+
+    // Subir a S3 si está configurado
+    if (process.env.AWS_ACCESS_KEY_ID && process.env.AWS_BUCKET) {
+      try {
+        // Generar un ID único para el reporte
+        const reportId = path.basename(outputPath, '.pdf').replace('reporte-competencias-', '');
+        const s3Key = generateS3Key(reportId);
+
+        // Subir el PDF a S3
+        const s3Result = await uploadPDF(outputPath, s3Key);
+        console.log('☁️ PDF disponible en:', s3Result.url);
+
+        // Retornar información adicional
+        return {
+          localPath: outputPath,
+          s3Url: s3Result.url,
+          s3Key: s3Result.key
+        };
+      } catch (s3Error) {
+        console.error('⚠️ Error subiendo a S3 (PDF local guardado):', s3Error.message);
+        // Si falla S3, al menos tenemos el archivo local
+      }
+    }
+
+    return { localPath: outputPath };
 
   } catch (error) {
     console.error('❌ Error generando PDF:', error);

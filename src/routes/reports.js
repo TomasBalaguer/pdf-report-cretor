@@ -38,8 +38,8 @@ router.post('/generate', async (req, res) => {
     console.log(`📁 Directorio de almacenamiento: ${storageDir}`);
     console.log(`📄 Ruta completa del archivo: ${filePath}`);
 
-    // Generar el PDF
-    await pdfGenerator.generateReport(req.body, filePath);
+    // Generar el PDF y obtener resultado (incluye URL de S3 si está configurado)
+    const result = await pdfGenerator.generateReport(req.body, filePath);
 
     // Verificar que el archivo se creó
     const fileExists = await fs.pathExists(filePath);
@@ -50,17 +50,26 @@ router.post('/generate', async (req, res) => {
     const fileStats = await fs.stat(filePath);
     console.log(`✅ PDF generado exitosamente: ${fileName} (${(fileStats.size / 1024).toFixed(2)} KB)`);
 
-    // Construir URL del PDF
-    const pdfUrl = `${req.protocol}://${req.get('host')}/generated-pdfs/${fileName}`;
-
-    res.status(200).json({
+    // Construir respuesta
+    const response = {
       success: true,
       message: 'Reporte generado exitosamente',
       reportId: reportId,
       fileName: fileName,
-      pdfUrl: pdfUrl,
       size: fileStats.size
-    });
+    };
+
+    // Si tenemos URL de S3, usarla; si no, usar URL local
+    if (result && result.s3Url) {
+      response.pdfUrl = result.s3Url;
+      response.s3Key = result.s3Key;
+      response.storageType = 's3';
+    } else {
+      response.pdfUrl = `${req.protocol}://${req.get('host')}/generated-pdfs/${fileName}`;
+      response.storageType = 'local';
+    }
+
+    res.status(200).json(response);
 
   } catch (error) {
     console.error('❌ Error generando reporte:', error);

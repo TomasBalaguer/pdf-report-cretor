@@ -106,14 +106,10 @@
     </div>
   </div>
 
-  {{!-- ============================================ --}}
-  {{!-- SECCIÓN DE COMPETENCIAS - ESTRUCTURA COMPLETA --}}
-  {{!-- ============================================ --}}
-
-  {{!-- Determinar si necesitamos mostrar el título principal --}}
+  {{!-- Página de Detalle por Competencia - Primera página con título --}}
   {{#if (hasItems competencias.altas)}}
-    {{!-- Primera página de ALTAS con título principal --}}
     <div class="page">
+      {{> header company=company logoReskilling=logoReskilling}}
       <h2 class="section-title">Detalle por Competencia</h2>
       <div class="competency-group" style="margin-top: 20px;">
         <h3 class="competency-group-title">Competencias destacadas</h3>
@@ -143,7 +139,7 @@
       </div>
     </div>
 
-    {{!-- Páginas adicionales de ALTAS --}}
+    {{!-- Páginas adicionales de competencias altas --}}
     {{#each competencias.altasPaginas}}
       {{#unless esPrimera}}
         <div class="page">
@@ -177,8 +173,12 @@
         </div>
       {{/unless}}
     {{/each}}
-  {{else if (hasItems competencias.medias)}}
-    {{!-- Si NO hay altas pero hay medias, primera página con título principal --}}
+  {{/if}}
+
+  {{!-- COMPETENCIAS MEDIAS --}}
+  {{#if (hasItems competencias.medias)}}
+    {{#unless (hasItems competencias.altas)}}
+    {{!-- Si no hay altas, empezar con medias --}}
     <div class="page">
       {{> header company=company logoReskilling=logoReskilling}}
       <h2 class="section-title">Detalle por Competencia</h2>
@@ -210,7 +210,7 @@
       </div>
     </div>
 
-    {{!-- Páginas adicionales de MEDIAS cuando son primeras --}}
+    {{!-- Páginas adicionales de competencias medias --}}
     {{#each competencias.mediasPaginas}}
       {{#unless esPrimera}}
         <div class="page">
@@ -244,8 +244,14 @@
         </div>
       {{/unless}}
     {{/each}}
-  {{else if (hasItems competencias.bajas)}}
-    {{!-- Si NO hay altas NI medias pero hay bajas, primera página con título principal --}}
+    {{/unless}}
+  {{/if}}
+
+  {{!-- COMPETENCIAS BAJAS --}}
+  {{#if (hasItems competencias.bajas)}}
+    {{#unless (hasItems competencias.altas)}}
+      {{#unless (hasItems competencias.medias)}}
+    {{!-- Si solo hay bajas primera página con título --}}
     <div class="page">
       {{> header company=company logoReskilling=logoReskilling}}
       <h2 class="section-title">Detalle por Competencia</h2>
@@ -279,7 +285,7 @@
       </div>
     </div>
 
-    {{!-- Páginas adicionales de BAJAS cuando son primeras --}}
+    {{!-- Páginas adicionales de competencias bajas --}}
     {{#each competencias.bajasPaginas}}
       {{#unless esPrimera}}
         <div class="page">
@@ -315,16 +321,18 @@
         </div>
       {{/unless}}
     {{/each}}
+      {{/unless}}
+    {{/unless}}
   {{/if}}
 
-  {{!-- COMPETENCIAS MEDIAS (cuando ya hay altas) --}}
-  {{#if (hasItems competencias.altas)}}
-    {{#if (hasItems competencias.medias)}}
+  {{!-- Páginas adicionales de competencias medias cuando HAY altas --}}
+  {{#if competencias.altasPaginas}}
+    {{#if competencias.mediasPaginas}}
       {{#each competencias.mediasPaginas}}
         <div class="page">
           {{> header company=../company logoReskilling=../logoReskilling}}
           <div class="competency-group" style="margin-top: 20px;">
-            <h3 class="competency-group-title">Competencias en vías de desarrollo{{#unless esPrimera}} (continuación){{/unless}}</h3>
+            <h3 class="competency-group-title">Competencias en vías de desarrollo{{#unless @first}} (continuación){{/unless}}</h3>
             <div class="competencies-container">
               {{#each items}}
                 <div class="competency-card competency-medium card-fixed">
@@ -354,15 +362,14 @@
     {{/if}}
   {{/if}}
 
-  {{!-- COMPETENCIAS BAJAS (siempre que existan) --}}
-  {{#if (hasItems competencias.bajas)}}
-    {{!-- Si hay altas O medias, mostrar todas las páginas de bajas --}}
-    {{#if (hasItems competencias.altas)}}
+  {{!-- Páginas adicionales de competencias bajas --}}
+  {{#if competencias.bajasPaginas}}
+    {{#unless competencias.bajasPaginas.0.esPrimera}}
       {{#each competencias.bajasPaginas}}
         <div class="page">
           {{> header company=../company logoReskilling=../logoReskilling}}
           <div class="competency-group" style="margin-top: 20px;">
-            <h3 class="competency-group-title">Competencias a desarrollar{{#unless esPrimera}} (continuación){{/unless}}</h3>
+            <h3 class="competency-group-title">Competencias a desarrollar{{#unless @first}} (continuación){{/unless}}</h3>
             <div class="competencies-container">
               {{#each items}}
                 <div class="competency-card competency-low card-fixed">
@@ -391,42 +398,10 @@
           </div>
         </div>
       {{/each}}
-    {{else if (hasItems competencias.medias)}}
-      {{#each competencias.bajasPaginas}}
-        <div class="page">
-          {{> header company=../company logoReskilling=../logoReskilling}}
-          <div class="competency-group" style="margin-top: 20px;">
-            <h3 class="competency-group-title">Competencias a desarrollar{{#unless esPrimera}} (continuación){{/unless}}</h3>
-            <div class="competencies-container">
-              {{#each items}}
-                <div class="competency-card competency-low card-fixed">
-                  <div class="competency-header">
-                    <div class="competency-badge {{#if (lt puntaje 3)}}badge-dark-red{{else}}badge-red{{/if}}">
-                      {{puntaje}}/10
-                    </div>
-                    <div>
-                      <div class="competency-name">{{nombre}}</div>
-                      {{#if definicion}}
-                      <div class="competency-definition">{{definicion}}</div>
-                      {{/if}}
-                    </div>
-                  </div>
-                  <div class="competency-description">
-                    {{descripcion}}
-                  </div>
-                  {{#if analisisDetallado}}
-                  <div class="competency-analysis">
-                    {{analisisDetallado}}
-                  </div>
-                  {{/if}}
-                </div>
-              {{/each}}
-            </div>
-          </div>
-        </div>
-      {{/each}}
-    {{/if}}
-  {{/if}}  {{!-- TEMPORALMENTE COMENTADO: Análisis de Empleabilidad
+    {{/unless}}
+  {{/if}}
+
+  {{!-- TEMPORALMENTE COMENTADO: Análisis de Empleabilidad
   <div class="page">
     {{> header company=company logoReskilling=logoReskilling}}
     {{> employability}}

@@ -1,0 +1,10 @@
+[build]
+builder = "nixpacks"
+
+[deploy]
+restartPolicyType = "on-failure"
+restartPolicyMaxRetries = 10
+
+[[mounts]]
+source = "pdf_storage"
+destination = "/app/generated-pdfs"

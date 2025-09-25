@@ -9,6 +9,7 @@
     "test": "node test/test-generator.js"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.896.0",
     "chart.js": "^3.9.1",
     "chartjs-node-canvas": "^4.1.6",
     "cors": "^2.8.5",
