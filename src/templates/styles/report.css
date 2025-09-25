@@ -24,7 +24,7 @@
 }
 
 body {
-  font-family: 'Segoe UI', 'Arial', sans-serif;
+  font-family: 'Helvetica Neue', Helvetica;
   color: var(--text-primary);
   line-height: 1.6;
   background: white;
@@ -264,8 +264,8 @@ body {
 }
 
 .radar-chart-large {
-  width: 500px;
-  height: 500px;
+  width: 480px;
+  height: 480px;
   object-fit: contain;
 }
 

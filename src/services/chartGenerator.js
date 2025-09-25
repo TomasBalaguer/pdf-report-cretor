@@ -1,8 +1,8 @@
 const { ChartJSNodeCanvas } = require('chartjs-node-canvas');
 
 // Configuración del canvas para Chart.js
-const width = 600;
-const height = 600;
+const width = 800;
+const height = 800;
 const backgroundColour = 'transparent';
 const chartJSNodeCanvas = new ChartJSNodeCanvas({
   width,
@@ -41,6 +41,14 @@ async function generateRadarChart(data) {
       options: {
         responsive: true,
         maintainAspectRatio: true,
+        layout: {
+          padding: {
+            top: 30,
+            right: 50,
+            bottom: 50,
+            left: 50
+          }
+        },
         plugins: {
           legend: {
             position: 'top',
@@ -49,7 +57,7 @@ async function generateRadarChart(data) {
               padding: 20,
               font: {
                 size: 12,
-                family: "'Segoe UI', 'Arial', sans-serif"
+                family: "'Helvetica Neue', Helvetica"
               },
               generateLabels: function(chart) {
                 const data = chart.data;
@@ -100,12 +108,21 @@ async function generateRadarChart(data) {
             },
             pointLabels: {
               font: {
-                size: 14,
+                size: 10,
                 weight: '500',
-                family: "'Segoe UI', 'Arial', sans-serif"
+                family: "'Helvetica Neue', Helvetica"
               },
               color: '#333',
-              padding: 20
+              padding: 10,
+              callback: function(value) {
+                // Si la etiqueta es muy larga, dividirla en dos líneas
+                if (value && value.length > 25) {
+                  const words = value.split(' ');
+                  const mid = Math.ceil(words.length / 2);
+                  return [words.slice(0, mid).join(' '), words.slice(mid).join(' ')];
+                }
+                return value;
+              }
             },
             angleLines: {
               color: 'rgba(0, 0, 0, 0.1)',
