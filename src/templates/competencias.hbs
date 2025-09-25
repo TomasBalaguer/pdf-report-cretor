@@ -1,0 +1,137 @@
+  {{!-- Páginas de Detalle por Competencia --}}
+
+  {{!-- COMPETENCIAS ALTAS --}}
+  {{#if competencias.altasPaginas.length}}
+    {{#each competencias.altasPaginas}}
+    <div class="page">
+      {{> header}}
+
+      {{#if esPrimera}}
+        <h2 class="section-title">Detalle por Competencia</h2>
+      {{/if}}
+
+      <div class="competency-group" style="margin-top: 20px;">
+        <h3 class="competency-group-title">
+          Competencias destacadas {{#unless esPrimera}}(continuación){{/unless}}
+        </h3>
+        <div class="competencies-container">
+          {{#each items}}
+          <div class="competency-card competency-high card-fixed">
+            <div class="competency-header">
+              <div class="competency-badge badge-green">{{puntaje}}/10</div>
+              <div>
+                <div class="competency-name">{{nombre}}</div>
+                {{#if definicion}}
+                <div class="competency-definition">{{definicion}}</div>
+                {{/if}}
+              </div>
+            </div>
+            <div class="competency-description">
+              {{descripcion}}
+            </div>
+            {{#if analisisDetallado}}
+            <div class="competency-analysis">
+              {{analisisDetallado}}
+            </div>
+            {{/if}}
+          </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  {{/if}}
+
+  {{!-- COMPETENCIAS MEDIAS --}}
+  {{#if competencias.mediasPaginas.length}}
+    {{#each competencias.mediasPaginas}}
+    <div class="page">
+      {{> header}}
+
+      {{!-- Si no hay competencias altas y es la primera página de medias, mostrar título --}}
+      {{#unless ../../competencias.altasPaginas.length}}
+        {{#if esPrimera}}
+          <h2 class="section-title">Detalle por Competencia</h2>
+        {{/if}}
+      {{/unless}}
+
+      <div class="competency-group" style="margin-top: 20px;">
+        <h3 class="competency-group-title">
+          Competencias en vías de desarrollo {{#unless esPrimera}}(continuación){{/unless}}
+        </h3>
+        <div class="competencies-container">
+          {{#each items}}
+          <div class="competency-card competency-medium card-fixed">
+            <div class="competency-header">
+              <div class="competency-badge badge-yellow">{{puntaje}}/10</div>
+              <div>
+                <div class="competency-name">{{nombre}}</div>
+                {{#if definicion}}
+                <div class="competency-definition">{{definicion}}</div>
+                {{/if}}
+              </div>
+            </div>
+            <div class="competency-description">
+              {{descripcion}}
+            </div>
+            {{#if analisisDetallado}}
+            <div class="competency-analysis">
+              {{analisisDetallado}}
+            </div>
+            {{/if}}
+          </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  {{/if}}
+
+  {{!-- COMPETENCIAS BAJAS --}}
+  {{#if competencias.bajasPaginas.length}}
+    {{#each competencias.bajasPaginas}}
+    <div class="page">
+      {{> header}}
+
+      {{!-- Si no hay competencias altas ni medias y es la primera página de bajas, mostrar título --}}
+      {{#unless ../../competencias.altasPaginas.length}}
+        {{#unless ../../competencias.mediasPaginas.length}}
+          {{#if esPrimera}}
+            <h2 class="section-title">Detalle por Competencia</h2>
+          {{/if}}
+        {{/unless}}
+      {{/unless}}
+
+      <div class="competency-group" style="margin-top: 20px;">
+        <h3 class="competency-group-title">
+          Competencias a desarrollar {{#unless esPrimera}}(continuación){{/unless}}
+        </h3>
+        <div class="competencies-container">
+          {{#each items}}
+          <div class="competency-card competency-low card-fixed">
+            <div class="competency-header">
+              <div class="competency-badge {{#if (lt puntaje 3)}}badge-dark-red{{else}}badge-red{{/if}}">
+                {{puntaje}}/10
+              </div>
+              <div>
+                <div class="competency-name">{{nombre}}</div>
+                {{#if definicion}}
+                <div class="competency-definition">{{definicion}}</div>
+                {{/if}}
+              </div>
+            </div>
+            <div class="competency-description">
+              {{descripcion}}
+            </div>
+            {{#if analisisDetallado}}
+            <div class="competency-analysis">
+              {{analisisDetallado}}
+            </div>
+            {{/if}}
+          </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  {{/if}}

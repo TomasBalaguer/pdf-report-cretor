@@ -24,6 +24,10 @@ handlebars.registerHelper('if', function(conditional, options) {
   }
 });
 
+handlebars.registerHelper('hasItems', function(array) {
+  return array && array.length > 0;
+});
+
 /**
  * Retorna la clase CSS fija para las cards
  * @param {Number} count - Cantidad de competencias (no usado ahora)
@@ -248,6 +252,45 @@ async function prepareReportData(data) {
     reportData.oportunidadesList = reportData.competencias.bajas.length > 0
       ? reportData.competencias.bajas.slice(0, 5).map(c => c.nombre)
       : reportData.competencias.medias.slice(0, 5).map(c => c.nombre);
+
+    // Dividir competencias en páginas (máximo 5 por página para que quepan bien)
+    const COMPETENCIAS_POR_PAGINA = 5;
+
+    // Dividir competencias altas
+    reportData.competencias.altasPaginas = [];
+    if (reportData.competencias.altas && reportData.competencias.altas.length > 0) {
+      console.log('📊 Procesando competencias altas:', reportData.competencias.altas.length);
+      for (let i = 0; i < reportData.competencias.altas.length; i += COMPETENCIAS_POR_PAGINA) {
+        const items = reportData.competencias.altas.slice(i, i + COMPETENCIAS_POR_PAGINA);
+        console.log(`  - Página ${i/COMPETENCIAS_POR_PAGINA + 1}: ${items.length} items`);
+        reportData.competencias.altasPaginas.push({
+          items: items,
+          esPrimera: i === 0
+        });
+      }
+    }
+
+    // Dividir competencias medias
+    reportData.competencias.mediasPaginas = [];
+    if (reportData.competencias.medias && reportData.competencias.medias.length > 0) {
+      for (let i = 0; i < reportData.competencias.medias.length; i += COMPETENCIAS_POR_PAGINA) {
+        reportData.competencias.mediasPaginas.push({
+          items: reportData.competencias.medias.slice(i, i + COMPETENCIAS_POR_PAGINA),
+          esPrimera: i === 0
+        });
+      }
+    }
+
+    // Dividir competencias bajas
+    reportData.competencias.bajasPaginas = [];
+    if (reportData.competencias.bajas && reportData.competencias.bajas.length > 0) {
+      for (let i = 0; i < reportData.competencias.bajas.length; i += COMPETENCIAS_POR_PAGINA) {
+        reportData.competencias.bajasPaginas.push({
+          items: reportData.competencias.bajas.slice(i, i + COMPETENCIAS_POR_PAGINA),
+          esPrimera: i === 0
+        });
+      }
+    }
   }
 
   // Procesar GAP analysis si existe

@@ -11,7 +11,7 @@
 <body>
   {{!-- Página 1: Portada con datos personales y gráfico --}}
   <div class="page">
-    {{> header}}
+    {{> header company=company logoReskilling=logoReskilling}}
 
     <h1 class="main-title">Reporte de Competencias</h1>
 
@@ -59,7 +59,7 @@
 
   {{!-- Página 2: Perfil General, Fortalezas y Oportunidades --}}
   <div class="page">
-    {{> header}}
+    {{> header company=company logoReskilling=logoReskilling}}
 
     <h2 class="section-title">Resumen Ejecutivo</h2>
 
@@ -106,118 +106,299 @@
     </div>
   </div>
 
-  {{!-- Página de Detalle por Competencia --}}
-  <div class="page">
-    {{> header}}
-
-    <h2 class="section-title">Detalle por Competencia</h2>
-
-    {{#if competencias.altas}}
-    <div class="competency-group" style="margin-top: 20px;">
-      <h3 class="competency-group-title">
-        Competencias destacadas
-      </h3>
-      <div class="competencies-container">
-        {{#each competencias.altas}}
-          <div class="competency-card competency-high card-fixed">
-            <div class="competency-header">
-              <div class="competency-badge badge-green">{{puntaje}}/10</div>
-              <div>
-                <div class="competency-name">{{nombre}}</div>
-                {{#if definicion}}
-                <div class="competency-definition">{{definicion}}</div>
-                {{/if}}
+  {{!-- Página de Detalle por Competencia - Primera página con título --}}
+  {{#if (hasItems competencias.altas)}}
+    <div class="page">
+      {{!-- {{> header company=company logoReskilling=logoReskilling}} --}}
+      <h2 class="section-title">Detalle por Competencia</h2>
+      <div class="competency-group" style="margin-top: 20px;">
+        <h3 class="competency-group-title">Competencias destacadas</h3>
+        <div class="competencies-container">
+          {{#each competencias.altasPaginas.[0].items}}
+            <div class="competency-card competency-high card-fixed">
+              <div class="competency-header">
+                <div class="competency-badge badge-green">{{puntaje}}/10</div>
+                <div>
+                  <div class="competency-name">{{nombre}}</div>
+                  {{#if definicion}}
+                  <div class="competency-definition">{{definicion}}</div>
+                  {{/if}}
+                </div>
               </div>
+              <div class="competency-description">
+                {{descripcion}}
+              </div>
+              {{#if analisisDetallado}}
+              <div class="competency-analysis">
+                {{analisisDetallado}}
+              </div>
+              {{/if}}
             </div>
-            <div class="competency-description">
-              {{descripcion}}
-            </div>
-            {{#if analisisDetallado}}
-            <div class="competency-analysis">
-              {{analisisDetallado}}
-            </div>
-            {{/if}}
-          </div>
-        {{/each}}
+          {{/each}}
+        </div>
       </div>
     </div>
-    {{/if}}
 
-    {{#if competencias.medias}}
-    <div class="competency-group" style="margin-top: 20px;">
-      <h3 class="competency-group-title">
-        Competencias en vías de desarrollo 
-      </h3>
-      <div class="competencies-container">
-        {{#each competencias.medias}}
-          <div class="competency-card competency-medium card-fixed">
-            <div class="competency-header">
-              <div class="competency-badge badge-yellow">{{puntaje}}/10</div>
-              <div>
-                <div class="competency-name">{{nombre}}</div>
-                {{#if definicion}}
-                <div class="competency-definition">{{definicion}}</div>
-                {{/if}}
-              </div>
+    {{!-- Páginas adicionales de competencias altas --}}
+    {{#each competencias.altasPaginas}}
+      {{#unless esPrimera}}
+        <div class="page">
+          {{> header company=../company logoReskilling=../logoReskilling}}
+          <div class="competency-group" style="margin-top: 20px;">
+            <h3 class="competency-group-title">Competencias destacadas (continuación)</h3>
+            <div class="competencies-container">
+              {{#each items}}
+                <div class="competency-card competency-high card-fixed">
+                  <div class="competency-header">
+                    <div class="competency-badge badge-green">{{puntaje}}/10</div>
+                    <div>
+                      <div class="competency-name">{{nombre}}</div>
+                      {{#if definicion}}
+                      <div class="competency-definition">{{definicion}}</div>
+                      {{/if}}
+                    </div>
+                  </div>
+                  <div class="competency-description">
+                    {{descripcion}}
+                  </div>
+                  {{#if analisisDetallado}}
+                  <div class="competency-analysis">
+                    {{analisisDetallado}}
+                  </div>
+                  {{/if}}
+                </div>
+              {{/each}}
             </div>
-            <div class="competency-description">
-              {{descripcion}}
-            </div>
-            {{#if analisisDetallado}}
-            <div class="competency-analysis">
-              {{analisisDetallado}}
-            </div>
-            {{/if}}
           </div>
-        {{/each}}
+        </div>
+      {{/unless}}
+    {{/each}}
+  {{else if (hasItems competencias.medias)}}
+    {{!-- Si no hay altas, empezar con medias --}}
+    <div class="page">
+      {{> header company=company logoReskilling=logoReskilling}}
+      <h2 class="section-title">Detalle por Competencia</h2>
+      <div class="competency-group" style="margin-top: 20px;">
+        <h3 class="competency-group-title">Competencias en vías de desarrollo</h3>
+        <div class="competencies-container">
+          {{#each competencias.mediasPaginas.[0].items}}
+            <div class="competency-card competency-medium card-fixed">
+              <div class="competency-header">
+                <div class="competency-badge badge-yellow">{{puntaje}}/10</div>
+                <div>
+                  <div class="competency-name">{{nombre}}</div>
+                  {{#if definicion}}
+                  <div class="competency-definition">{{definicion}}</div>
+                  {{/if}}
+                </div>
+              </div>
+              <div class="competency-description">
+                {{descripcion}}
+              </div>
+              {{#if analisisDetallado}}
+              <div class="competency-analysis">
+                {{analisisDetallado}}
+              </div>
+              {{/if}}
+            </div>
+          {{/each}}
+        </div>
       </div>
     </div>
-    {{/if}}
 
-    {{#if competencias.bajas}}
-    <div class="competency-group" style="margin-top: 20px;">
-      <h3 class="competency-group-title">
-        Competencias a desarrollar (Nivel Bajo o muy bajo)
-      </h3>
-      <div class="competencies-container">
-        {{#each competencias.bajas}}
-          <div class="competency-card competency-low card-fixed">
-            <div class="competency-header">
-              <div class="competency-badge {{#if (lt puntaje 3)}}badge-dark-red{{else}}badge-red{{/if}}">
-                {{puntaje}}/10
-              </div>
-              <div>
-                <div class="competency-name">{{nombre}}</div>
-                {{#if definicion}}
-                <div class="competency-definition">{{definicion}}</div>
-                {{/if}}
-              </div>
+    {{!-- Páginas adicionales de competencias medias --}}
+    {{#each competencias.mediasPaginas}}
+      {{#unless esPrimera}}
+        <div class="page">
+          {{> header company=../company logoReskilling=../logoReskilling}}
+          <div class="competency-group" style="margin-top: 20px;">
+            <h3 class="competency-group-title">Competencias en vías de desarrollo (continuación)</h3>
+            <div class="competencies-container">
+              {{#each items}}
+                <div class="competency-card competency-medium card-fixed">
+                  <div class="competency-header">
+                    <div class="competency-badge badge-yellow">{{puntaje}}/10</div>
+                    <div>
+                      <div class="competency-name">{{nombre}}</div>
+                      {{#if definicion}}
+                      <div class="competency-definition">{{definicion}}</div>
+                      {{/if}}
+                    </div>
+                  </div>
+                  <div class="competency-description">
+                    {{descripcion}}
+                  </div>
+                  {{#if analisisDetallado}}
+                  <div class="competency-analysis">
+                    {{analisisDetallado}}
+                  </div>
+                  {{/if}}
+                </div>
+              {{/each}}
             </div>
-            <div class="competency-description">
-              {{descripcion}}
-            </div>
-            {{#if analisisDetallado}}
-            <div class="competency-analysis">
-              {{analisisDetallado}}
-            </div>
-            {{/if}}
           </div>
-        {{/each}}
+        </div>
+      {{/unless}}
+    {{/each}}
+  {{else if (hasItems competencias.bajas)}}
+    {{!-- Si solo hay bajas primera página con título --}}
+    <div class="page">
+      {{> header company=company logoReskilling=logoReskilling}}
+      <h2 class="section-title">Detalle por Competencia</h2>
+      <div class="competency-group" style="margin-top: 20px;">
+        <h3 class="competency-group-title">Competencias a desarrollar</h3>
+        <div class="competencies-container">
+          {{#each competencias.bajasPaginas.[0].items}}
+            <div class="competency-card competency-low card-fixed">
+              <div class="competency-header">
+                <div class="competency-badge {{#if (lt puntaje 3)}}badge-dark-red{{else}}badge-red{{/if}}">
+                  {{puntaje}}/10
+                </div>
+                <div>
+                  <div class="competency-name">{{nombre}}</div>
+                  {{#if definicion}}
+                  <div class="competency-definition">{{definicion}}</div>
+                  {{/if}}
+                </div>
+              </div>
+              <div class="competency-description">
+                {{descripcion}}
+              </div>
+              {{#if analisisDetallado}}
+              <div class="competency-analysis">
+                {{analisisDetallado}}
+              </div>
+              {{/if}}
+            </div>
+          {{/each}}
+        </div>
       </div>
     </div>
+
+    {{!-- Páginas adicionales de competencias bajas --}}
+    {{#each competencias.bajasPaginas}}
+      {{#unless esPrimera}}
+        <div class="page">
+          {{> header company=../company logoReskilling=../logoReskilling}}
+          <div class="competency-group" style="margin-top: 20px;">
+            <h3 class="competency-group-title">Competencias a desarrollar (continuación)</h3>
+            <div class="competencies-container">
+              {{#each items}}
+                <div class="competency-card competency-low card-fixed">
+                  <div class="competency-header">
+                    <div class="competency-badge {{#if (lt puntaje 3)}}badge-dark-red{{else}}badge-red{{/if}}">
+                      {{puntaje}}/10
+                    </div>
+                    <div>
+                      <div class="competency-name">{{nombre}}</div>
+                      {{#if definicion}}
+                      <div class="competency-definition">{{definicion}}</div>
+                      {{/if}}
+                    </div>
+                  </div>
+                  <div class="competency-description">
+                    {{descripcion}}
+                  </div>
+                  {{#if analisisDetallado}}
+                  <div class="competency-analysis">
+                    {{analisisDetallado}}
+                  </div>
+                  {{/if}}
+                </div>
+              {{/each}}
+            </div>
+          </div>
+        </div>
+      {{/unless}}
+    {{/each}}
+  {{/if}}
+
+  {{!-- Páginas adicionales de competencias medias --}}
+  {{#if competencias.altasPaginas}}
+    {{#if competencias.mediasPaginas}}
+      {{#each competencias.mediasPaginas}}
+        <div class="page">
+          {{> header company=../company logoReskilling=../logoReskilling}}
+          <div class="competency-group" style="margin-top: 20px;">
+            <h3 class="competency-group-title">Competencias en vías de desarrollo{{#unless @first}} (continuación){{/unless}}</h3>
+            <div class="competencies-container">
+              {{#each items}}
+                <div class="competency-card competency-medium card-fixed">
+                  <div class="competency-header">
+                    <div class="competency-badge badge-yellow">{{puntaje}}/10</div>
+                    <div>
+                      <div class="competency-name">{{nombre}}</div>
+                      {{#if definicion}}
+                      <div class="competency-definition">{{definicion}}</div>
+                      {{/if}}
+                    </div>
+                  </div>
+                  <div class="competency-description">
+                    {{descripcion}}
+                  </div>
+                  {{#if analisisDetallado}}
+                  <div class="competency-analysis">
+                    {{analisisDetallado}}
+                  </div>
+                  {{/if}}
+                </div>
+              {{/each}}
+            </div>
+          </div>
+        </div>
+      {{/each}}
     {{/if}}
-  </div>
+  {{/if}}
+
+  {{!-- Páginas adicionales de competencias bajas --}}
+  {{#if competencias.bajasPaginas}}
+    {{#unless competencias.bajasPaginas.0.esPrimera}}
+      {{#each competencias.bajasPaginas}}
+        <div class="page">
+          {{> header company=../company logoReskilling=../logoReskilling}}
+          <div class="competency-group" style="margin-top: 20px;">
+            <h3 class="competency-group-title">Competencias a desarrollar{{#unless @first}} (continuación){{/unless}}</h3>
+            <div class="competencies-container">
+              {{#each items}}
+                <div class="competency-card competency-low card-fixed">
+                  <div class="competency-header">
+                    <div class="competency-badge {{#if (lt puntaje 3)}}badge-dark-red{{else}}badge-red{{/if}}">
+                      {{puntaje}}/10
+                    </div>
+                    <div>
+                      <div class="competency-name">{{nombre}}</div>
+                      {{#if definicion}}
+                      <div class="competency-definition">{{definicion}}</div>
+                      {{/if}}
+                    </div>
+                  </div>
+                  <div class="competency-description">
+                    {{descripcion}}
+                  </div>
+                  {{#if analisisDetallado}}
+                  <div class="competency-analysis">
+                    {{analisisDetallado}}
+                  </div>
+                  {{/if}}
+                </div>
+              {{/each}}
+            </div>
+          </div>
+        </div>
+      {{/each}}
+    {{/unless}}
+  {{/if}}
 
   {{!-- TEMPORALMENTE COMENTADO: Análisis de Empleabilidad
   <div class="page">
-    {{> header}}
+    {{> header company=company logoReskilling=logoReskilling}}
     {{> employability}}
   </div>
   --}}
 
   {{!-- TEMPORALMENTE COMENTADO: Timeline y Plan de Acción
   <div class="page">
-    {{> header}}
+    {{> header company=company logoReskilling=logoReskilling}}
 
     {{#if analisisEmpleabilidad.timeline}}
     <div class="timeline-section">
@@ -243,7 +424,7 @@
 
   {{!-- Página de Conclusiones (MANTENER ACTIVA) --}}
   <div class="page">
-    {{> header}}
+    {{> header company=company logoReskilling=logoReskilling}}
 
     <h2 class="section-title">Conclusiones y Recomendaciones Finales</h2>
 
