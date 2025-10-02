@@ -48,6 +48,12 @@
       </div>
     </div>
 
+    {{#if company.intro}}
+    <div class="intro-section">
+      <p class="intro-text">{{company.intro}}</p>
+    </div>
+    {{/if}}
+
     <h2 class="section-title">Resumen de Competencias</h2>
 
     <div class="chart-container-large">
@@ -105,6 +111,157 @@
       </p>
     </div>
   </div>
+
+  {{!-- ============================================ --}}
+  {{!-- SECCIÓN DE COMPETENCIAS ESPECÍFICAS GASVALPO --}}
+  {{!-- ============================================ --}}
+  {{#if competencias_especiales}}
+  <div class="page">
+    {{> header company=company logoReskilling=logoReskilling}}
+    <h2 class="section-title">Alineación con Competencias Específicas Gasvalpo</h2>
+
+    <div class="special-competencies-section">
+      {{#if competencias_especiales.competencia_especial_1}}
+      <div class="special-competency-card special-competency-1">
+        <div class="special-competency-badge">{{competencias_especiales.competencia_especial_1.cumplimiento}}</div>
+        <div class="special-competency-title">{{competencias_especiales.competencia_especial_1.nombre}}</div>
+        <div class="special-competency-description">{{competencias_especiales.competencia_especial_1.descripcion}}</div>
+
+        <div class="special-competency-details">
+          <div class="special-competency-metric">
+            <span class="special-competency-label">Competencias:</span>
+            <span class="special-competency-value">{{competencias_especiales.competencia_especial_1.competencias_evaluadas}}</span>
+          </div>
+          <div class="special-competency-metric">
+            <span class="special-competency-label">Gap promedio:</span>
+            <span class="special-competency-value {{#if (contains competencias_especiales.competencia_especial_1.gap_promedio '+')}}gap-positive{{else}}gap-negative{{/if}}">
+              {{competencias_especiales.competencia_especial_1.gap_promedio}}
+            </span>
+          </div>
+        </div>
+
+        <div class="special-competency-analysis">
+          <div class="special-competency-analysis-label">Análisis:</div>
+          <div class="special-competency-analysis-text">{{competencias_especiales.competencia_especial_1.analisis}}</div>
+        </div>
+      </div>
+      {{/if}}
+
+      {{#if competencias_especiales.competencia_especial_2}}
+      <div class="special-competency-card special-competency-2">
+        <div class="special-competency-badge">{{competencias_especiales.competencia_especial_2.cumplimiento}}</div>
+        <div class="special-competency-title">{{competencias_especiales.competencia_especial_2.nombre}}</div>
+        <div class="special-competency-description">{{competencias_especiales.competencia_especial_2.descripcion}}</div>
+
+        <div class="special-competency-details">
+          <div class="special-competency-metric">
+            <span class="special-competency-label">Competencias:</span>
+            <span class="special-competency-value">{{competencias_especiales.competencia_especial_2.competencias_evaluadas}}</span>
+          </div>
+          <div class="special-competency-metric">
+            <span class="special-competency-label">Gap promedio:</span>
+            <span class="special-competency-value {{#if (contains competencias_especiales.competencia_especial_2.gap_promedio '+')}}gap-positive{{else}}gap-negative{{/if}}">
+              {{competencias_especiales.competencia_especial_2.gap_promedio}}
+            </span>
+          </div>
+        </div>
+
+        <div class="special-competency-analysis">
+          <div class="special-competency-analysis-label">Análisis:</div>
+          <div class="special-competency-analysis-text">{{competencias_especiales.competencia_especial_2.analisis}}</div>
+        </div>
+      </div>
+      {{/if}}
+
+      {{#if competencias_especiales.competencia_especial_3}}
+      <div class="special-competency-card special-competency-3">
+        <div class="special-competency-badge">{{competencias_especiales.competencia_especial_3.cumplimiento}}</div>
+        <div class="special-competency-title">{{competencias_especiales.competencia_especial_3.nombre}}</div>
+        <div class="special-competency-description">{{competencias_especiales.competencia_especial_3.descripcion}}</div>
+
+        <div class="special-competency-details">
+          <div class="special-competency-metric">
+            <span class="special-competency-label">Competencias:</span>
+            <span class="special-competency-value">{{competencias_especiales.competencia_especial_3.competencias_evaluadas}}</span>
+          </div>
+          <div class="special-competency-metric">
+            <span class="special-competency-label">Gap promedio:</span>
+            <span class="special-competency-value {{#if (contains competencias_especiales.competencia_especial_3.gap_promedio '+')}}gap-positive{{else}}gap-negative{{/if}}">
+              {{competencias_especiales.competencia_especial_3.gap_promedio}}
+            </span>
+          </div>
+        </div>
+
+        <div class="special-competency-analysis">
+          <div class="special-competency-analysis-label">Análisis:</div>
+          <div class="special-competency-analysis-text">{{competencias_especiales.competencia_especial_3.analisis}}</div>
+        </div>
+      </div>
+      {{/if}}
+    </div>
+  </div>
+
+  {{!-- Segunda página de competencias especiales (4 y 5) --}}
+  {{#if competencias_especiales.competencia_especial_4}}
+  <div class="page">
+    {{> header company=company logoReskilling=logoReskilling}}
+
+    <div class="special-competencies-section" style="margin-top: 30px;">
+      {{#if competencias_especiales.competencia_especial_4}}
+      <div class="special-competency-card special-competency-4">
+        <div class="special-competency-badge">{{competencias_especiales.competencia_especial_4.cumplimiento}}</div>
+        <div class="special-competency-title">{{competencias_especiales.competencia_especial_4.nombre}}</div>
+        <div class="special-competency-description">{{competencias_especiales.competencia_especial_4.descripcion}}</div>
+
+        <div class="special-competency-details">
+          <div class="special-competency-metric">
+            <span class="special-competency-label">Competencias:</span>
+            <span class="special-competency-value">{{competencias_especiales.competencia_especial_4.competencias_evaluadas}}</span>
+          </div>
+          <div class="special-competency-metric">
+            <span class="special-competency-label">Gap promedio:</span>
+            <span class="special-competency-value {{#if (contains competencias_especiales.competencia_especial_4.gap_promedio '+')}}gap-positive{{else}}gap-negative{{/if}}">
+              {{competencias_especiales.competencia_especial_4.gap_promedio}}
+            </span>
+          </div>
+        </div>
+
+        <div class="special-competency-analysis">
+          <div class="special-competency-analysis-label">Análisis:</div>
+          <div class="special-competency-analysis-text">{{competencias_especiales.competencia_especial_4.analisis}}</div>
+        </div>
+      </div>
+      {{/if}}
+
+      {{#if competencias_especiales.competencia_especial_5}}
+      <div class="special-competency-card special-competency-5">
+        <div class="special-competency-badge">{{competencias_especiales.competencia_especial_5.cumplimiento}}</div>
+        <div class="special-competency-title">{{competencias_especiales.competencia_especial_5.nombre}}</div>
+        <div class="special-competency-description">{{competencias_especiales.competencia_especial_5.descripcion}}</div>
+
+        <div class="special-competency-details">
+          <div class="special-competency-metric">
+            <span class="special-competency-label">Competencias:</span>
+            <span class="special-competency-value">{{competencias_especiales.competencia_especial_5.competencias_evaluadas}}</span>
+          </div>
+          <div class="special-competency-metric">
+            <span class="special-competency-label">Gap promedio:</span>
+            <span class="special-competency-value {{#if (contains competencias_especiales.competencia_especial_5.gap_promedio '+')}}gap-positive{{else}}gap-negative{{/if}}">
+              {{competencias_especiales.competencia_especial_5.gap_promedio}}
+            </span>
+          </div>
+        </div>
+
+        <div class="special-competency-analysis">
+          <div class="special-competency-analysis-label">Análisis:</div>
+          <div class="special-competency-analysis-text">{{competencias_especiales.competencia_especial_5.analisis}}</div>
+        </div>
+      </div>
+      {{/if}}
+    </div>
+  </div>
+  {{/if}}
+  {{/if}}
 
   {{!-- ============================================ --}}
   {{!-- SECCIÓN DE COMPETENCIAS - ESTRUCTURA COMPLETA --}}

@@ -29,6 +29,11 @@ handlebars.registerHelper('hasItems', function(array) {
   return array && array.length > 0;
 });
 
+handlebars.registerHelper('contains', function(str, searchStr) {
+  if (!str || !searchStr) return false;
+  return str.toString().indexOf(searchStr) !== -1;
+});
+
 /**
  * Retorna la clase CSS fija para las cards
  * @param {Number} count - Cantidad de competencias (no usado ahora)
@@ -360,13 +365,15 @@ async function prepareReportData(data) {
   if (data.company) {
     reportData.company = {
       name: data.company.name || reportData.datosPersonales?.nombreUniversidad || 'Universidad',
-      imageUrl: data.company.image_url || null
+      imageUrl: data.company.image_url || null,
+      intro: data.company.intro || null
     };
   } else {
     // Mantener compatibilidad con formato anterior
     reportData.company = {
       name: reportData.datosPersonales?.nombreUniversidad || 'Universidad',
-      imageUrl: reportData.datosPersonales?.logoUniversidad || null
+      imageUrl: reportData.datosPersonales?.logoUniversidad || null,
+      intro: reportData.datosPersonales?.intro || null
     };
   }
 

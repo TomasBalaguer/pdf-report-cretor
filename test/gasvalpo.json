@@ -1,7 +1,8 @@
 {
   "company": {
     "name": "Universidad Técnica Federico Santa Maria",
-    "image_url": "https://fls-9fd68e5e-6b36-4f55-9c85-1f292e9a0e82.laravel.cloud/company_logos/logo_5_1757551142.jpg"
+    "image_url": "https://fls-9fd68e5e-6b36-4f55-9c85-1f292e9a0e82.laravel.cloud/company_logos/logo_5_1757551142.jpg", 
+    "intro": "El Programa de Formación de Líderes Gasvalpo tiene como propósito fortalecer en los colaboradores y colaboradoras un liderazgo inspirador, práctico y coherente con los valores y el Manifiesto de la organización. En este contexto, el presente reporte constituye una herramienta clave para acompañar su proceso personal de desarrollo, al permitir identificar con claridad las principales fortalezas y áreas de mejora.\nEste diagnóstico entrega una visión objetiva del logro de las habilidades técnicas, socioemocionales y de liderazgo declaradas en el programa formativo, lo que facilita la construcción de un perfil integral alineado con los desafíos actuales de la organización. De esta manera, se promueve que usted, como líder, avance desde un conocimiento profundo de sus capacidades, consolidando un proceso de crecimiento profesional y personal en sintonía con las metas estratégicas de Gasvalpo."
   },
   "competencias": {
     "altas": [
