@@ -132,13 +132,22 @@ async function generateReport(data, outputPath) {
       ]
     };
 
-    // Si estamos en un entorno sin Puppeteer instalado, usar executablePath
+    // Detectar y configurar Chromium
     const chromiumPath = findChromiumExecutable();
     if (chromiumPath) {
+      console.log('✅ Usando Chromium en:', chromiumPath);
       launchOptions.executablePath = chromiumPath;
-    } else if (process.env.RAILWAY_ENVIRONMENT || process.env.NODE_ENV === 'production') {
-      // En Railway o producción, intentar usar Puppeteer sin ejecutable específico
-      console.log('⚠️ No se encontró Chromium instalado, usando Puppeteer bundle');
+    } else {
+      console.log('⚠️ No se encontró Chromium local, usando Puppeteer bundled');
+      // No especificar executablePath permite que Puppeteer use su versión bundled
+      // Esto es mejor para Railway donde Chromium se instala via nixpacks
+    }
+
+    // En producción, agregar configuraciones adicionales
+    if (process.env.RAILWAY_ENVIRONMENT || process.env.NODE_ENV === 'production') {
+      console.log('📦 Modo producción detectado');
+      launchOptions.args.push('--disable-web-security');
+      launchOptions.args.push('--disable-features=IsolateOrigins,site-per-process');
     }
 
     browser = await puppeteer.launch(launchOptions);
