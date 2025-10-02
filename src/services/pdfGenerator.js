@@ -279,8 +279,8 @@ async function prepareReportData(data) {
       ? reportData.competencias.bajas.slice(0, 5).map(c => c.nombre)
       : reportData.competencias.medias.slice(0, 5).map(c => c.nombre);
 
-    // Dividir competencias en páginas (máximo 5 por página para que quepan bien)
-    const COMPETENCIAS_POR_PAGINA = 5;
+    // Dividir competencias en páginas (máximo 4 por página con altura de 40mm)
+    const COMPETENCIAS_POR_PAGINA = 4;
 
     // Dividir competencias altas
     reportData.competencias.altasPaginas = [];

@@ -23,8 +23,8 @@ async function generateRadarChart(data) {
         labels: data.labels || ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5'],
         datasets: [
           {
-            label: 'Perfil',
-            data: data.valores?.serie1 || [8, 6, 7, 5, 9],
+            label: 'Mi Perfil',
+            data: data.valores?.serie1?.map(v => Number(v)) || [8, 6, 7, 5, 9],
             fill: true,
             backgroundColor: 'rgba(0, 188, 212, 0.2)', // Cyan transparente
             borderColor: 'rgba(0, 188, 212, 1)',
@@ -35,6 +35,21 @@ async function generateRadarChart(data) {
             pointHoverBorderColor: 'rgba(0, 188, 212, 1)',
             pointRadius: 4,
             pointHoverRadius: 6
+          },
+          {
+            label: 'Perfil ideal Líder Gasvalpo',
+            data: data.valores?.serie2?.map(v => Number(v)) || [8, 8, 8, 8, 8, 8, 8, 8, 8],
+            fill: false,
+            backgroundColor: 'transparent',
+            borderColor: 'rgba(220, 38, 127, 0.8)', // Rojo
+            borderWidth: 2,
+            borderDash: [5, 5], // Línea punteada
+            pointBackgroundColor: 'rgba(220, 38, 127, 0.8)',
+            pointBorderColor: '#fff',
+            pointHoverBackgroundColor: '#fff',
+            pointHoverBorderColor: 'rgba(220, 38, 127, 1)',
+            pointRadius: 3,
+            pointHoverRadius: 5
           }
         ]
       },

@@ -7,7 +7,7 @@ async function testPDFGeneration() {
     console.log('🚀 Iniciando prueba de generación de PDF...\n');
 
     // Cargar datos de prueba
-    const sampleDataPath = path.join(__dirname, 'sample-data.json');
+    const sampleDataPath = path.join(__dirname, 'gasvalpo.json');
     const sampleData = await fs.readJson(sampleDataPath);
     console.log('✅ Datos de prueba cargados correctamente');
 

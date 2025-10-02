@@ -1,0 +1,244 @@
+{
+  "company": {
+    "name": "Universidad Técnica Federico Santa Maria",
+    "image_url": "https://fls-9fd68e5e-6b36-4f55-9c85-1f292e9a0e82.laravel.cloud/company_logos/logo_5_1757551142.jpg"
+  },
+  "competencias": {
+    "altas": [
+      {
+        "nombre": "Responsabilidad",
+        "puntaje": 9,
+        "definicion": "Capacidad de asumir las consecuencias de las propias acciones y cumplir con compromisos y obligaciones de manera confiable.",
+        "descripcion": "Demuestra un compromiso excepcional con sus obligaciones profesionales y personales",
+        "analisisDetallado": "El evaluado exhibe un sentido de responsabilidad sobresaliente, evidenciado en su decisión de aceptar el puesto en Talca pese a las implicaciones familiares. Su gestión de equipos técnicos y contratistas refleja un compromiso profundo con los resultados y la fidelización de clientes. La energía vocal consistente y el tono reflexivo durante las respuestas confirman una internalización genuina de esta competencia, sin rastros de dudas o ambivalencia.",
+        "relevanciaGasvalpo": "Esta competencia es fundamental para CE2 y CE5, siendo pilar del Manifiesto Gasvalpo. En la industria energética, donde la seguridad y el cumplimiento normativo son críticos, un líder con alta responsabilidad garantiza la continuidad operacional y la confianza de stakeholders internos y externos."
+      },
+      {
+        "nombre": "Capacidad y Estilo de Liderazgo",
+        "puntaje": 8,
+        "definicion": "Habilidad para guiar, inspirar y dirigir equipos hacia el logro de objetivos organizacionales.",
+        "descripcion": "Muestra un liderazgo colaborativo y humano con resultados comprobados",
+        "analisisDetallado": "Destaca un estilo de liderazgo basado en el respeto mutuo y el trato humano, logrando armonía laboral y resultados positivos con sus equipos. Su capacidad para influir positivamente en otros supervisores y su enfoque en el aprendizaje continuo de sus líderes demuestran madurez. El tono cálido y la claridad en su dicción al describir estas experiencias refuerzan la autenticidad de su enfoque de liderazgo.",
+        "relevanciaGasvalpo": "Transversal a CE1, CE2 y CE5, el liderazgo colaborativo es el núcleo del perfil Gasvalpo. Su enfoque en fortalecer vínculos de confianza y desarrollar equipos cohesionados se alinea perfectamente con la cultura organizacional basada en integridad y compromiso."
+      },
+      {
+        "nombre": "Habilidad para Construir Relaciones",
+        "puntaje": 9,
+        "definicion": "Capacidad de establecer, mantener y desarrollar conexiones interpersonales positivas y productivas.",
+        "descripcion": "Sobresale en la construcción de vínculos genuinos y duraderos con diversos stakeholders",
+        "analisisDetallado": "El evaluado demuestra una habilidad excepcional para establecer conexiones significativas, desde la influencia positiva en colegas hasta el apoyo personal brindado a compañeros. Su enfoque en fidelizar clientes y mantener armonía con contratistas revela una comprensión profunda del valor de las relaciones. La estabilidad emocional y el tono empático en sus narraciones confirman la genuinidad de estas conexiones interpersonales.",
+        "relevanciaGasvalpo": "Crítica para CE1 y CE5, esta competencia permite fortalecer los vínculos de confianza fundamentales en Gasvalpo. En un contexto donde la colaboración entre áreas técnicas y comerciales es esencial, esta habilidad garantiza la cohesión organizacional necesaria para la excelencia operacional."
+      },
+      {
+        "nombre": "Empatía",
+        "puntaje": 9,
+        "definicion": "Capacidad de comprender y compartir los sentimientos y perspectivas de otras personas de manera genuina.",
+        "descripcion": "Manifiesta una comprensión profunda y genuina de las necesidades emocionales de otros",
+        "analisisDetallado": "La capacidad empática del evaluado se evidencia particularmente en su apoyo al compañero con problemas personales, demostrando sensibilidad y comprensión sin juzgar. Su habilidad para reconocer cuando alguien necesita ayuda y ofrecer consejo constructivo muestra madurez emocional. El tono cálido y las pausas reflexivas al narrar estas experiencias confirman la autenticidad de su preocupación por el bienestar ajeno.",
+        "relevanciaGasvalpo": "Fundamental para CE1 y CE3, la empatía permite conducir conversaciones significativas y fortalecer equipos cohesionados. En el contexto de Gasvalpo, donde el desarrollo de personas es prioritario, esta competencia facilita el liderazgo transformacional necesario para movilizar el compromiso organizacional."
+      },
+      {
+        "nombre": "Autoconocimiento",
+        "puntaje": 8,
+        "definicion": "Comprensión profunda de las propias fortalezas, debilidades, valores, motivaciones y patrones de comportamiento.",
+        "descripcion": "Evidencia una reflexión madura sobre su trayectoria y áreas de mejora",
+        "analisisDetallado": "Demuestra alta capacidad de autorreflexión al reconocer la importancia del esfuerzo personal y la necesidad de humildad tras la experiencia en Talca. Su mensaje a su yo del pasado refleja una comprensión clara de su evolución profesional. La coherencia emocional y la claridad en la articulación de estas reflexiones indican un proceso de introspección genuino y continuo.",
+        "relevanciaGasvalpo": "Importante para CE5, el autoconocimiento es esencial para promover los valores de integridad del Manifiesto Gasvalpo. Un líder que comprende sus propias motivaciones y limitaciones puede modelar comportamientos alineados con la cultura organizacional de manera auténtica."
+      },
+      {
+        "nombre": "Capacidad de Influencia y Comunicación",
+        "puntaje": 8,
+        "definicion": "Habilidad para transmitir ideas de manera persuasiva y movilizar a otros hacia objetivos comunes.",
+        "descripcion": "Demuestra capacidad notable para influir positivamente y comunicar con impacto",
+        "analisisDetallado": "Su habilidad para influir se manifiesta claramente en la transformación del estilo de gestión de otro supervisor más experimentado. La capacidad de adaptar su vocabulario técnico a uno más amigable tras la reunión en Talca muestra flexibilidad comunicativa. El ritmo consistente y la variación tonal apropiada en sus respuestas refuerzan su competencia comunicacional natural.",
+        "relevanciaGasvalpo": "Crítica para CE3, esta competencia es esencial para conducir conversaciones significativas que movilicen el compromiso. En el entorno técnico-comercial de Gasvalpo, la capacidad de traducir complejidades técnicas en mensajes accesibles es fundamental para el éxito organizacional."
+      },
+      {
+        "nombre": "Curiosidad y Capacidad de Aprendizaje",
+        "puntaje": 8,
+        "definicion": "Disposición activa para adquirir nuevos conocimientos, explorar ideas y adaptarse a nuevas situaciones.",
+        "descripcion": "Muestra una orientación constante hacia el aprendizaje y la mejora continua",
+        "analisisDetallado": "El evaluado enfatiza repetidamente que 'todos los días se aprende algo nuevo' y valora el aprendizaje de sus líderes. Su transición de inspector a supervisor y su adaptación a diferentes zonas geográficas demuestran flexibilidad cognitiva. La energía vocal elevada al describir oportunidades de aprendizaje confirma una motivación intrínseca genuina por el desarrollo profesional.",
+        "relevanciaGasvalpo": "Importante para CE4, esta competencia sustenta la capacidad de innovación y mejora continua en el entorno energético. La disposición al aprendizaje constante es crucial para mantener la competitividad y adaptarse a las transformaciones tecnológicas del sector."
+      },
+      {
+        "nombre": "Perseverancia",
+        "puntaje": 8,
+        "definicion": "Capacidad de mantener el esfuerzo y la determinación para alcanzar objetivos a pesar de obstáculos, fracasos o dificultades.",
+        "descripcion": "Demuestra consistencia y determinación en el logro de objetivos a largo plazo",
+        "analisisDetallado": "La trayectoria desde inspector independiente hasta supervisor en Gasvalpo evidencia perseverancia sostenida. Su mensaje sobre que 'el esfuerzo vale la pena' refleja una convicción profunda sobre la importancia de la persistencia. El tono positivo y la ausencia de amargura al narrar desafíos pasados confirman una perseverancia constructiva, no obstinada.",
+        "relevanciaGasvalpo": "Relevante para CE4, la perseverancia es fundamental para sostener procesos de mejora continua en el largo plazo. En la industria energética, donde los proyectos son complejos y de larga duración, esta competencia asegura la consecución de objetivos estratégicos."
+      },
+      {
+        "nombre": "Resiliencia",
+        "puntaje": 8,
+        "definicion": "Habilidad para adaptarse y recuperarse de situaciones difíciles, aprendiendo y creciendo a partir de los desafíos.",
+        "descripcion": "Evidencia capacidad sólida de recuperación y aprendizaje ante adversidades",
+        "analisisDetallado": "Su recuperación tras la experiencia negativa en la reunión de Talca, transformándola en aprendizaje sobre humildad, demuestra resiliencia madura. La capacidad de adaptarse a trabajar lejos de su familia y posteriormente regresar a Valparaíso muestra flexibilidad ante cambios. El tono reflexivo sin victimización confirma un procesamiento saludable de las dificultades.",
+        "relevanciaGasvalpo": "Importante para CE2 y CE4, la resiliencia permite gestionar equipos en contextos dinámicos y mantener la innovación pese a fracasos. En un sector regulado y de alta presión como el energético, esta competencia es vital para el liderazgo sostenible."
+      }
+    ],
+    "medias": [
+      {
+        "nombre": "Pensamiento Crítico y Adaptabilidad",
+        "puntaje": 7,
+        "definicion": "Capacidad de analizar información objetivamente, evaluar situaciones complejas y ajustar enfoques según nuevas circunstancias.",
+        "descripcion": "Muestra capacidad analítica y flexibilidad, con espacio para mayor profundidad",
+        "analisisDetallado": "Demuestra adaptabilidad al ajustar su comunicación tras la reunión en Talca y al cambiar de zona geográfica. Sin embargo, el análisis crítico podría ser más profundo en la evaluación de situaciones complejas. La tendencia a enfocarse en aspectos positivos, aunque valiosa, sugiere oportunidad para desarrollar mayor pensamiento crítico constructivo.",
+        "relevanciaGasvalpo": "Crítica para CE2 y CE4, esta competencia requiere fortalecimiento para enfrentar los desafíos dinámicos del sector energético. El desarrollo de mayor profundidad analítica permitiría una gestión más estratégica en contextos de cambio acelerado."
+      },
+      {
+        "nombre": "Manejo del Estrés",
+        "puntaje": 7,
+        "definicion": "Habilidad para mantener la calma y el rendimiento efectivo bajo presión y en situaciones demandantes.",
+        "descripcion": "Gestiona adecuadamente la presión, con ocasionales indicadores de tensión",
+        "analisisDetallado": "Mantiene compostura general en situaciones desafiantes como la decisión de mudarse a Talca. Los titubeos frecuentes (10 en primera respuesta) y pausas significativas sugieren cierto procesamiento de estrés. El ciclismo como actividad de relajación indica consciencia sobre la importancia del manejo del estrés, aunque podría beneficiarse de estrategias adicionales.",
+        "relevanciaGasvalpo": "Crítica para CE2, el manejo del estrés es fundamental para la gestión en contextos dinámicos con foco en seguridad. Fortalecer esta competencia mejoraría la capacidad de toma de decisiones bajo presión, crucial en situaciones operativas críticas."
+      },
+      {
+        "nombre": "Asertividad",
+        "puntaje": 7,
+        "definicion": "Capacidad de expresar opiniones, necesidades y límites de manera directa, honesta y respetuosa.",
+        "descripcion": "Comunica sus ideas con respeto, aunque con tendencia a suavizar mensajes",
+        "analisisDetallado": "Muestra asertividad al plantear observaciones técnicas en reuniones y al aconsejar al compañero sobre independizarse. Sin embargo, la necesidad de cambiar a un vocabulario 'más amigable' y su énfasis en la humildad sugieren ocasional dificultad para mantener firmeza asertiva. El tono moderado en situaciones conflictivas indica espacio para mayor contundencia comunicacional.",
+        "relevanciaGasvalpo": "Crítica para CE3, la asertividad es esencial para conducir conversaciones significativas. Desarrollar mayor firmeza en la comunicación directa, manteniendo el respeto, potenciaría su efectividad en la movilización del compromiso organizacional."
+      },
+      {
+        "nombre": "Creatividad",
+        "puntaje": 7,
+        "definicion": "Habilidad para generar ideas originales, encontrar soluciones innovadoras y abordar problemas desde perspectivas no convencionales.",
+        "descripcion": "Demuestra pensamiento creativo funcional con potencial de mayor innovación",
+        "analisisDetallado": "La respuesta sobre el ladrillo muestra creatividad práctica al enumerar múltiples usos funcionales. Su enfoque en la mecánica de bicicletas indica pensamiento técnico-creativo. Sin embargo, las soluciones tienden hacia lo convencional y práctico más que hacia la innovación disruptiva, sugiriendo oportunidad para explorar enfoques más audaces.",
+        "relevanciaGasvalpo": "Importante para CE4, la creatividad es necesaria para la innovación en el sector energético. Potenciar esta competencia hacia soluciones más disruptivas fortalecería la capacidad de enfrentar desafíos emergentes en la transición energética."
+      },
+      {
+        "nombre": "Regulación Emocional",
+        "puntaje": 7,
+        "definicion": "Habilidad para reconocer, comprender y gestionar las propias emociones de manera efectiva y apropiada.",
+        "descripcion": "Gestiona sus emociones adecuadamente con ocasionales fluctuaciones",
+        "analisisDetallado": "Mantiene estabilidad emocional general, procesando experiencias negativas de manera constructiva. La variación en energía vocal entre respuestas (0.4 a 0.7) sugiere cierta fluctuación emocional según el tema. El reconocimiento de la necesidad de humildad indica consciencia emocional, aunque los múltiples titubeos sugieren procesamiento emocional en tiempo real.",
+        "relevanciaGasvalpo": "Importante para CE3, la regulación emocional facilita conversaciones significativas en entornos laborales. Fortalecer esta competencia mejoraría la consistencia en la conducción de diálogos desafiantes, especialmente en contextos de feedback o conflicto."
+      },
+      {
+        "nombre": "Tolerancia a la Frustración",
+        "puntaje": 6,
+        "definicion": "Capacidad de mantener la compostura y continuar funcionando efectivamente cuando las expectativas no se cumplen.",
+        "descripcion": "Procesa frustraciones aunque requiere tiempo considerable para superarlas",
+        "analisisDetallado": "La experiencia en Talca muestra capacidad de procesar frustración, aunque admite haberle 'dado vuelta bastante tiempo'. La emoción dominante de tristeza (0.3) en esa narración sugiere impacto emocional persistente. Si bien logra extraer aprendizajes, el procesamiento prolongado indica oportunidad para desarrollar mayor rapidez en la recuperación ante decepciones.",
+        "relevanciaGasvalpo": "Relevante para CE4, la tolerancia a la frustración es crucial para sostener procesos de innovación con resultados inciertos. Mejorar esta competencia aceleraría los ciclos de aprendizaje y experimentación necesarios en la transformación del sector energético."
+      }
+    ],
+    "bajas": []
+  },
+  "conclusiones": {
+    "resumenFinal": "El evaluado presenta un perfil de liderazgo sólido con fortalezas destacadas en competencias interpersonales y de responsabilidad. Su trayectoria desde inspector independiente hasta supervisor en Gasvalpo evidencia capacidad de crecimiento y adaptación significativa. Sobresale su estilo de liderazgo humano y colaborativo, con resultados comprobados en la gestión de equipos y la influencia positiva en pares. La combinación de alta empatía, responsabilidad excepcional y habilidad para construir relaciones lo posiciona como un líder orientado a las personas con fuerte alineación a los valores organizacionales. Las áreas de desarrollo se centran principalmente en competencias técnico-analíticas como el pensamiento crítico y la gestión emocional bajo presión. Su orientación al aprendizaje continuo y la humildad demostrada sugieren alto potencial para abordar estas brechas de desarrollo.",
+    "recomendacionPrincipal": "Fortalecer las competencias de pensamiento crítico y manejo del estrés mediante programas de desarrollo ejecutivo enfocados en toma de decisiones estratégicas y técnicas de mindfulness organizacional. Complementar con mentoring en asertividad ejecutiva para potenciar su ya sólido liderazgo con mayor contundencia comunicacional en contextos de alta complejidad técnica."
+  },
+  "perfilGeneral": {
+    "resumenDescriptivo": "El evaluado se presenta como un profesional del área técnico-comercial con una sólida trayectoria en el sector del gas, actualmente desempeñándose en gestión de servicios técnicos residenciales con responsabilidad sobre personal propio y contratistas. Su perfil revela un líder natural con orientación marcada hacia las personas, combinando competencia técnica con habilidades interpersonales sobresalientes.\n\nEntre sus fortalezas más notables destacan la capacidad excepcional para construir relaciones significativas, un sentido de responsabilidad profundamente arraigado y un estilo de liderazgo colaborativo que genera resultados positivos consistentes. Su alta empatía y autoconocimiento le permiten conectar genuinamente con sus equipos, mientras que su perseverancia y resiliencia han sido fundamentales en su evolución profesional desde roles operativos hasta posiciones de liderazgo.\n\nLas áreas de desarrollo se concentran en competencias más analíticas y de gestión emocional bajo presión. Si bien demuestra capacidad de adaptación, existe oportunidad para profundizar el pensamiento crítico y desarrollar mayor asertividad en contextos técnicos complejos. Su procesamiento de frustraciones, aunque constructivo, podría ser más ágil para los desafíos dinámicos del sector energético.",
+    "metodologia": "Metodología Re-skilling.AI: Análisis Psicométrico Multimodal. Evaluación basada en análisis que combina técnicas proyectivas tradicionales con tecnología de procesamiento de lenguaje natural. Un modelo de IA especializado (LLM), entrenado en marcos teóricos de evaluación psicológica y competencias organizacionales, analiza respuestas de audio evaluando tanto contenido semántico como indicadores prosódicos (estabilidad emocional, confianza, energía vocal). Esta metodología multimodal permite identificar patrones comportamentales profundos y generar predicciones de empleabilidad con alta validez predictiva."
+  },
+  "competencias_especiales": {
+    "competencia_especial_1": {
+      "nombre": "CE1: Liderazgo Colaborativo",
+      "descripcion": "Aplicar herramientas de liderazgo colaborativo en el contexto organizacional de Gasvalpo, con el propósito de fortalecer vínculos de confianza y equipos cohesionados",
+      "cumplimiento": "88%",
+      "competencias_evaluadas": "Construir Relaciones (9/10), Liderazgo (8/10), Empatía (9/10), Asertividad (7/10)",
+      "gap_promedio": "-0.75 puntos",
+      "analisis": "El candidato demuestra preparación sobresaliente para el liderazgo colaborativo, con fortalezas excepcionales en construcción de relaciones y empatía. Su estilo de gestión humano y los resultados positivos con equipos confirman alta alineación con esta competencia especial."
+    },
+    "competencia_especial_2": {
+      "nombre": "CE2: Gestión Dinámica",
+      "descripcion": "Gestionar equipos de trabajo de manera flexible y eficiente en contextos dinámicos, para favorecer el cumplimiento de objetivos y la seguridad organizacional",
+      "cumplimiento": "78%",
+      "competencias_evaluadas": "Pensamiento Crítico (7/10), Manejo Estrés (7/10), Responsabilidad (9/10), Liderazgo (8/10)",
+      "gap_promedio": "-1.75 puntos",
+      "analisis": "Muestra capacidad sólida con oportunidades de mejora en pensamiento crítico y manejo del estrés. La alta responsabilidad compensa parcialmente las brechas, pero requiere desarrollo en competencias analíticas para contextos de mayor dinamismo."
+    },
+    "competencia_especial_3": {
+      "nombre": "CE3: Conversaciones Significativas",
+      "descripcion": "Conducir conversaciones significativas en entornos laborales reales, con el fin de movilizar el compromiso y el desarrollo de las personas",
+      "cumplimiento": "78%",
+      "competencias_evaluadas": "Influencia y Comunicación (8/10), Asertividad (7/10), Empatía (9/10), Regulación Emocional (7/10)",
+      "gap_promedio": "-1.75 puntos",
+      "analisis": "Capacidad notable para conversaciones empáticas y de influencia positiva. Las brechas en asertividad y regulación emocional sugieren necesidad de fortalecer la contundencia comunicacional manteniendo el equilibrio emocional en diálogos desafiantes."
+    },
+    "competencia_especial_4": {
+      "nombre": "CE4: Innovación y Mejora Continua",
+      "descripcion": "Integrar principios de innovación y mejora continua en su práctica profesional, para enfrentar desafíos del entorno energético",
+      "cumplimiento": "75%",
+      "competencias_evaluadas": "Creatividad (7/10), Curiosidad (8/10), Pensamiento Crítico (7/10), Resiliencia (8/10)",
+      "gap_promedio": "-1.5 puntos",
+      "analisis": "Demuestra disposición al aprendizaje y resiliencia sólida, pero requiere potenciar creatividad y pensamiento crítico para impulsar innovación disruptiva. Su orientación práctica es valiosa pero podría complementarse con enfoques más audaces."
+    },
+    "competencia_especial_5": {
+      "nombre": "CE5: Cultura Organizacional",
+      "descripcion": "Promover una cultura organizacional basada en el Manifiesto Gasvalpo, con acciones alineadas a los valores de integridad, compromiso y responsabilidad",
+      "cumplimiento": "88%",
+      "competencias_evaluadas": "Responsabilidad (9/10), Autoconocimiento (8/10), Liderazgo (8/10)",
+      "gap_promedio": "-0.33 puntos",
+      "analisis": "Excelente alineación con los valores organizacionales. La responsabilidad excepcional y el autoconocimiento desarrollado lo posicionan como embajador natural de la cultura Gasvalpo, con capacidad para modelar comportamientos deseados."
+    }
+  },
+  "datosPersonales": {
+    "nombre": "Danilo",
+    "email": "danilo.zambrano@gasvalpo.cl",
+    "fechaTest": "2 Octubre 2025",
+    "nombreUniversidad": "No especificada"
+  },
+  "datosGraficoRadar": {
+    "labels": [
+      "Perseverancia",
+      "Resiliencia",
+      "Pensamiento Crítico y Adaptabilidad",
+      "Regulación Emocional",
+      "Responsabilidad",
+      "Autoconocimiento",
+      "Manejo del Estrés",
+      "Asertividad",
+      "Habilidad para Construir Relaciones",
+      "Creatividad",
+      "Empatía",
+      "Capacidad de Influencia y Comunicación",
+      "Capacidad y Estilo de Liderazgo",
+      "Curiosidad y Capacidad de Aprendizaje",
+      "Tolerancia a la Frustración"
+    ],
+    "valores": {
+      "serie1": [
+        "8",
+        "8",
+        "7",
+        "7",
+        "9",
+        "8",
+        "7",
+        "7",
+        "9",
+        "7",
+        "9",
+        "8",
+        "8",
+        "8",
+        "6"
+      ],
+      "serie2": [
+        "7",
+        "8",
+        "9",
+        "7",
+        "9",
+        "7",
+        "8",
+        "8",
+        "8",
+        "7",
+        "8",
+        "9",
+        "9",
+        "8",
+        "7"
+      ]
+    }
+  }
+}

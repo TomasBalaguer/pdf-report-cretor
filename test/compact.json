@@ -1,175 +1,263 @@
-
-
-
-   
-  {
+{
   "company": {
-      "name": "Universidad Técnica Federico Santa Maria",
-      "image_url": "https://fls-9fd68e5e-6b36-4f55-9c85-1f292e9a0e82.laravel.cloud/company_logos/logo_5_1757551142.jpg"
-    },
-    "competencias": {
-      "altas": [
-        {
-          "nombre": "Empatía",
-          "puntaje": 9,
-          "definicion": "Capacidad de comprender y compartir los sentimientos y perspectivas de otras personas de manera genuina.",
-          "descripcion": "Demuestra una capacidad excepcional para conectar emocionalmente y brindar apoyo activo a otros.",
-          "analisisDetallado": "El evaluado manifiesta una empatía profunda y genuina, evidenciada por su capacidad de detectar situaciones de necesidad y responder de manera inmediata y efectiva. Su narrativa sobre la asistencia a su vecino enfermo revela no solo sensibilidad emocional, sino también la habilidad para traducir esa comprensión en acciones concretas. Los indicadores prosódicos muestran autenticidad emocional alta y coherencia entre el discurso y el sentimiento expresado."
-        },
-        {
-          "nombre": "Responsabilidad",
-          "puntaje": 9,
-          "definicion": "Capacidad de asumir las consecuencias de las propias acciones y cumplir con compromisos y obligaciones de manera confiable.",
-          "descripcion": "Manifiesta un alto sentido de responsabilidad tanto en el ámbito profesional como personal.",
-          "analisisDetallado": "Su compromiso con los objetivos organizacionales y la seguridad en el suministro de gas natural refleja una responsabilidad corporativa excepcional. La energía vocal elevada al hablar de sus funciones y la claridad en la dicción indican convicción genuina sobre sus obligaciones. Además, su disposición para asumir compromisos familiares durante sus estudios de posgrado demuestra coherencia entre valores personales y profesionales."
-        },
-        {
-          "nombre": "Habilidad para Construir Relaciones",
-          "puntaje": 8,
-          "definicion": "Capacidad de establecer, mantener y desarrollar conexiones interpersonales positivas y productivas.",
-          "descripcion": "Posee habilidades sólidas para establecer vínculos interpersonales basados en confianza y apoyo mutuo.",
-          "analisisDetallado": "Su capacidad para trabajar colaborativamente con su equipo y la satisfacción expresada al respecto sugieren competencias interpersonales bien desarrolladas. La variación tonal equilibrada y la estabilidad emocional en sus narrativas sobre trabajo en equipo reflejan comodidad en entornos relacionales. Su descripción sobre el apoyo familiar y comunitario indica habilidades para cultivar redes de soporte significativas."
-        },
-        {
-          "nombre": "Curiosidad y Capacidad de Aprendizaje",
-          "puntaje": 8,
-          "definicion": "Disposición activa para adquirir nuevos conocimientos, explorar ideas y adaptarse a nuevas situaciones.",
-          "descripcion": "Demuestra una orientación natural hacia el aprendizaje continuo y la exploración de nuevas áreas de conocimiento.",
-          "analisisDetallado": "Su pasión heredada por la música y el audio revela una curiosidad intrínseca que se mantiene activa a lo largo del tiempo. La energía vocal elevada al describir procesos de aprendizaje y la metodología de prueba y error que emplea sugieren una mentalidad de crecimiento genuina. Su compromiso con estudios de posgrado y la búsqueda constante de mejoras técnicas reflejan una disposición proactiva hacia el desarrollo personal y profesional."
-        }
-      ],
-      "medias": [
-        {
-          "nombre": "Resiliencia",
-          "puntaje": 7,
-          "definicion": "Habilidad para adaptarse y recuperarse de situaciones difíciles, aprendiendo y creciendo a partir de los desafíos.",
-          "descripcion": "Muestra capacidad para recuperarse de contratiempos y convertirlos en oportunidades de mejora.",
-          "analisisDetallado": "Su manejo de los resultados de auditoría menos favorable demuestra una resiliencia práctica, pasando de la frustración inicial a la acción constructiva. Los indicadores prosódicos muestran variaciones emocionales normales que se estabilizan hacia una perspectiva positiva. Su capacidad para crear planes de trabajo estructurados ante las brechas identificadas sugiere una recuperación adaptativa, aunque el proceso inicial de manejo emocional indica espacio para desarrollo en la regulación inmediata del impacto."
-        },
-        {
-          "nombre": "Capacidad de Influencia y Comunicación",
-          "puntaje": 7,
-          "definicion": "Habilidad para transmitir ideas de manera persuasiva y movilizar a otros hacia objetivos comunes.",
-          "descripcion": "Posee habilidades comunicativas efectivas con tendencia a la construcción de consensos.",
-          "analisisDetallado": "Su enfoque colaborativo para resolver diferencias profesionales muestra habilidades comunicativas orientadas al entendimiento mutuo. La estrategia de revisar requisitos técnicos juntos revela capacidad para influir a través de la evidencia objetiva. Sin embargo, los titubeos frecuentes en las respuestas largas y la tendencia a buscar validación externa sugieren que su estilo comunicativo es más consultivo que directivo, lo cual puede limitar su impacto en situaciones que requieren liderazgo más asertivo."
-        },
-        {
-          "nombre": "Regulación Emocional",
-          "puntaje": 7,
-          "definicion": "Habilidad para reconocer, comprender y gestionar las propias emociones de manera efectiva y apropiada.",
-          "descripcion": "Demuestra conciencia emocional y capacidad de gestión, con oportunidades de mejora en la respuesta inicial.",
-          "analisisDetallado": "Su reconocimiento explícito de la frustración experimentada durante la auditoría y la capacidad subsecuente para canalizarla hacia acciones productivas indican competencias de regulación emocional en desarrollo. Los niveles de estrés medios detectados en el análisis prosódico sugieren que, aunque logra estabilizar sus emociones, el proceso inicial puede ser más reactivo de lo óptimo. Su capacidad para mantener coherencia emocional a lo largo de las narrativas muestra fortalezas en la gestión sostenida."
-        },
-        {
-          "nombre": "Pensamiento Crítico y Adaptabilidad",
-          "puntaje": 7,
-          "definicion": "Capacidad de analizar información objetivamente, evaluar situaciones complejas y ajustar enfoques según nuevas circunstancias.",
-          "descripcion": "Posee habilidades analíticas sólidas con enfoque sistemático para la resolución de problemas.",
-          "analisisDetallado": "Su aproximación metodológica para revisar normativas técnicas y encontrar soluciones más simples demuestra pensamiento crítico aplicado. La capacidad para reconocer que las perspectivas iniciales pueden ser incorrectas y ajustar el enfoque muestra flexibilidad cognitiva. Sin embargo, la tendencia a buscar confirmación externa antes de tomar decisiones sugiere que su confianza en el análisis independiente podría fortalecerse para optimizar su adaptabilidad en situaciones de mayor ambigüedad."
-        },
-        {
-          "nombre": "Creatividad",
-          "puntaje": 6,
-          "definicion": "Habilidad para generar ideas originales, encontrar soluciones innovadoras y abordar problemas desde perspectivas no convencionales.",
-          "descripcion": "Muestra creatividad práctica con enfoque en aplicaciones funcionales más que en innovación disruptiva.",
-          "analisisDetallado": "Su ejercicio con la botella de plástico revela pensamiento divergente con múltiples aplicaciones prácticas, destacando especialmente la solución innovadora para el control de insectos. La energía vocal moderada durante esta sección sugiere comodidad con el pensamiento creativo, aunque la orientación hacia soluciones conocidas indica una creatividad más adaptativa que radical. Su capacidad para encontrar conexiones funcionales entre objetos y necesidades muestra potencial creativo que podría expandirse hacia contextos profesionales más complejos."
-        },
-        {
-          "nombre": "Capacidad y Estilo de Liderazgo",
-          "puntaje": 6,
-          "definicion": "Habilidad para guiar, inspirar y dirigir equipos hacia el logro de objetivos organizacionales.",
-          "descripcion": "Demuestra un estilo de liderazgo colaborativo en desarrollo, con fortalezas en la construcción de consenso.",
-          "analisisDetallado": "Su reconocimiento sobre el aprendizaje gradual en dirección y la importancia de la retroalimentación sugiere autoconciencia sobre su desarrollo como líder. El nivel de confianza prosódica alto cuando habla de trabajo en equipo contrasta con mayor reflexión cuando aborda temas de liderazgo, indicando una competencia en construcción. Su enfoque en mantener los valores organizacionales y personales muestra integridad en el liderazgo, aunque la tendencia consultiva podría beneficiarse de mayor decisividad en situaciones críticas."
-        },
-        {
-          "nombre": "Perseverancia",
-          "puntaje": 6,
-          "definicion": "Capacidad de mantener el esfuerzo y la determinación para alcanzar objetivos a pesar de obstáculos, fracasos o dificultades.",
-          "descripcion": "Muestra determinación sostenida en proyectos a largo plazo con capacidad de mantenerse enfocado en objetivos.",
-          "analisisDetallado": "Su compromiso con estudios de posgrado mientras balanceaba responsabilidades familiares demuestra perseverancia aplicada en contextos personales. La energía vocal elevada al describir logros académicos sugiere satisfacción genuina por el esfuerzo sostenido. Sin embargo, la necesidad de apoyo familiar extenso para completar el proyecto y la ausencia de narrativas sobre obstáculos profesionales significativos indica que su perseverancia funciona mejor en entornos de apoyo estructurado que en situaciones de adversidad aislada."
-        },
-        {
-          "nombre": "Autoconocimiento",
-          "puntaje": 5,
-          "definicion": "Comprensión profunda de las propias fortalezas, debilidades, valores, motivaciones y patrones de comportamiento.",
-          "descripcion": "Posee conciencia básica de sus características personales con oportunidades de profundización en el autoanálisis.",
-          "analisisDetallado": "Su reflexión sobre la necesidad de desarrollar confianza en capacidades de liderazgo muestra cierto nivel de autoconciencia, aunque las pausas significativas durante estas reflexiones sugieren que este proceso de autoevaluación está en desarrollo. Los indicadores prosódicos revelan mayor reflexión cuando aborda temas personales, lo que indica disposición hacia la introspección. Sin embargo, la ausencia de conexiones explícitas entre experiencias pasadas y patrones de comportamiento actuales sugiere que su autoconocimiento es más descriptivo que analítico."
-        }
-      ],
-      "bajas": [
-        {
-          "nombre": "Asertividad",
-          "puntaje": 4,
-          "definicion": "Capacidad de expresar opiniones, necesidades y límites de manera directa, honesta y respetuosa.",
-          "descripcion": "Tiende hacia un estilo comunicativo consultivo que puede limitar la expresión directa de posiciones.",
-          "analisisDetallado": "Su preferencia por buscar consenso y validación externa antes de sostener una posición sugiere un desarrollo limitado en asertividad directa. Los titubeos frecuentes y la tendencia a suavizar sus planteamientos con frases como 'digamos' indican incomodidad con la confrontación constructiva. Aunque su respeto por las perspectivas ajenas es admirable, la ausencia de ejemplos donde defienda posiciones difíciles o establezca límites claros sugiere una oportunidad significativa de desarrollo en esta competencia fundamental para roles de mayor responsabilidad."
-        },
-        {
-          "nombre": "Manejo del Estrés",
-          "puntaje": 4,
-          "definicion": "Habilidad para mantener la calma y el rendimiento efectivo bajo presión y en situaciones demandantes.",
-          "descripcion": "Muestra vulnerabilidad inicial al estrés con capacidad de recuperación que requiere tiempo y apoyo.",
-          "analisisDetallado": "Los niveles de ansiedad detectados en el análisis prosódico y su descripción de frustración inicial durante la auditoría revelan una respuesta al estrés que requiere desarrollo. Su dependencia de estructuras de apoyo externas y la necesidad de tiempo para procesar situaciones difíciles sugieren que su rendimiento bajo presión inmediata podría verse comprometido. Aunque demuestra capacidad de recuperación, la fase inicial de manejo del estrés presenta oportunidades claras de fortalecimiento mediante técnicas de regulación más inmediatas."
-        },
-        {
-          "nombre": "Tolerancia a la Frustración",
-          "puntaje": 4,
-          "definicion": "Capacidad de mantener la compostura y continuar funcionando efectivamente cuando las expectativas no se cumplen.",
-          "descripcion": "Experimenta impacto emocional significativo ante contratiempos, requiriendo tiempo para estabilizar su respuesta.",
-          "analisisDetallado": "Su reconocimiento explícito del impacto emocional de los resultados de auditoría y la necesidad de gestionar la frustración tanto propia como del equipo indica una tolerancia a la frustración en desarrollo. Los indicadores prosódicos muestran variabilidad emocional cuando describe situaciones adversas, sugiriendo que su funcionamiento inicial se ve afectado por expectativas no cumplidas. Aunque eventualmente logra canalizarlo productivamente, el período de ajuste emocional inicial representa una área crítica para el desarrollo profesional en roles de mayor exposición a resultados variables."
-        }
-      ]
-    },
-    "conclusiones": {
-      "resumenFinal": "El evaluado presenta un perfil de competencias transversales caracterizado por fortalezas significativas en dimensiones interpersonales y de responsabilidad, combinadas con oportunidades de desarrollo en competencias de firmeza personal y manejo de presión. Su capacidad empática excepcional y su sólido sentido de responsabilidad lo posicionan como un profesional confiable y orientado al bienestar colectivo. Sin embargo, su tendencia hacia estilos consultivos y su sensibilidad inicial ante contratiempos sugieren la necesidad de fortalecer competencias de asertividad y regulación emocional inmediata. Su curiosidad natural y disposición hacia el aprendizaje continuo representan activos importantes para su desarrollo profesional futuro.",
-      "recomendacionPrincipal": "Implementar un programa de desarrollo enfocado en técnicas de comunicación asertiva y manejo de estrés inmediato, complementado con ejercicios prácticos de toma de decisiones bajo presión. Aprovechar sus fortalezas empáticas y de construcción de relaciones para roles que requieran coordinación de equipos, mientras se trabaja específicamente en el fortalecimiento de su tolerancia a la frustración mediante exposición gradual a situaciones de mayor ambigüedad e incertidumbre."
-    },
-    "perfilGeneral": {
-      "resumenDescriptivo": "El evaluado se caracteriza por un perfil profesional centrado en la integridad y calidad operacional, con una orientación marcada hacia la responsabilidad colectiva y el bienestar organizacional. Su personalidad refleja una combinación de sensibilidad interpersonal elevada con una aproximación metodológica y sistemática a los desafíos profesionales. Su capacidad para detectar necesidades ajenas y responder con acciones concretas lo posiciona como un elemento valioso en dinámicas de equipo y entornos colaborativos.\n\nSus competencias más desarrolladas se concentran en dimensiones relacionales y de compromiso organizacional, evidenciando una madurez emocional que facilita la construcción de vínculos de confianza y la gestión de responsabilidades complejas. Su curiosidad intrínseca y disposición hacia el aprendizaje continuo sugieren un potencial de crecimiento sostenido, particularmente en áreas técnicas y de especialización profesional.\n\nLas principales oportunidades de desarrollo se centran en competencias de firmeza personal y gestión de presión inmediata. Su tendencia hacia la consulta y búsqueda de consenso, aunque valiosa en muchos contextos, podría beneficiarse de mayor decisividad y capacidad de sostener posiciones ante resistencia. Su sensibilidad ante contratiempos, si bien refleja compromiso genuino con la excelencia, requiere fortalecimiento para optimizar su funcionamiento en entornos de alta variabilidad e incertidumbre.",
-      "metodologia": "Metodología Re-skilling.AI: Análisis Psicométrico Multimodal. Evaluación basada en análisis que combina técnicas proyectivas tradicionales con tecnología de procesamiento de lenguaje natural. Un modelo de IA especializado (LLM), entrenado en marcos teóricos de evaluación psicológica y competencias organizacionales, analiza respuestas de audio evaluando tanto contenido semántico como indicadores prosódicos (estabilidad emocional, confianza, energía vocal). Esta metodología multimodal permite identificar patrones comportamentales profundos y generar predicciones de empleabilidad con alta validez predictiva."
-    },
-    "datosPersonales": {
-      "nombre": "GONZALO ANDRES GILABERT",
-      "email": "ggilabert@gasvalpo.cl", 
-      "fechaTest": "23 Septiembre 2025",
-      "nombreUniversidad": "Universidad del Paraíso"
-    },
-    "datosGraficoRadar": {
-      "labels": [
-        "Perseverancia",
-        "Resiliencia", 
-        "Pensamiento Crítico y Adaptabilidad",
-        "Regulación Emocional",
-        "Responsabilidad",
-        "Autoconocimiento",
-        "Manejo del Estrés",
-        "Asertividad",
-        "Habilidad para Construir Relaciones",
-        "Creatividad",
-        "Empatía",
-        "Capacidad de Influencia y Comunicación",
-        "Capacidad y Estilo de Liderazgo",
-        "Curiosidad y Capacidad de Aprendizaje",
-        "Tolerancia a la Frustración"
-      ],
-      "valores": {
-        "serie1": [
-          "6",
-          "7",
-          "7", 
-          "7",
-          "9",
-          "5",
-          "4",
-          "4",
-          "8",
-          "6",
-          "9",
-          "7",
-          "6",
-          "8",
-          "4"
-        ]
+    "name": "Universidad Técnica Federico Santa Maria",
+    "image_url": "https://fls-9fd68e5e-6b36-4f55-9c85-1f292e9a0e82.laravel.cloud/company_logos/logo_5_1757551142.jpg"
+  },
+  "planAccion": {
+    "fases": [
+      {
+        "numero": 1,
+        "duracion": "0-6 meses",
+        "descripcion": "Fundamentos y evaluación inicial"
+      },
+      {
+        "numero": 2,
+        "duracion": "6-12 meses",
+        "descripcion": "Desarrollo y práctica"
+      },
+      {
+        "numero": 3,
+        "duracion": "12-18 meses",
+        "descripcion": "Consolidación y autonomía"
       }
+    ],
+    "proximoPaso": "Iniciar con evaluación detallada y diseño de plan personalizado de desarrollo",
+    "propuestasDesarrollo": [
+      {
+        "titulo": "Desarrollo de competencias clave",
+        "descripcion": "Plan de desarrollo personalizado para fortalecer competencias identificadas"
+      },
+      {
+        "titulo": "Formación continua",
+        "descripcion": "Programas de capacitación y actualización profesional"
+      },
+      {
+        "titulo": "Práctica supervisada",
+        "descripcion": "Aplicación práctica de conocimientos con acompañamiento experto"
+      }
+    ]
+  },
+  "competencias": {
+    "altas": [
+      {
+        "nombre": "Autoconocimiento",
+        "puntaje": 9,
+        "definicion": "Comprensión profunda de las propias fortalezas, debilidades, valores, motivaciones y patrones de comportamiento",
+        "descripcion": "Demuestra una notable capacidad de introspección y consciencia de sus procesos internos",
+        "analisisDetallado": "Exhibe una profunda comprensión de sus patrones comportamentales y emocionales, con capacidad para articular claramente sus motivaciones y áreas de mejora. Su tono reflexivo y pausado denota autenticidad en el proceso de autoexploración. Mantiene un balance entre reconocer sus logros y áreas de desarrollo."
+      },
+      {
+        "nombre": "Resiliencia",
+        "puntaje": 9,
+        "definicion": "Habilidad para adaptarse y recuperarse de situaciones difíciles, aprendiendo y creciendo a partir de los desafíos",
+        "descripcion": "Muestra una sobresaliente capacidad de recuperación y aprendizaje ante los reveses",
+        "analisisDetallado": "Demuestra una notable habilidad para transformar experiencias desafiantes en oportunidades de crecimiento. Su tono de voz transmite serenidad y confianza al describir situaciones adversas. La energía vocal aumenta al describir las soluciones implementadas, evidenciando optimismo y determinación."
+      },
+      {
+        "nombre": "Creatividad",
+        "puntaje": 8,
+        "definicion": "Habilidad para generar ideas originales, encontrar soluciones innovadoras y abordar problemas desde perspectivas no convencionales",
+        "descripcion": "Destaca por su capacidad de generar soluciones innovadoras ante desafíos complejos",
+        "analisisDetallado": "Demuestra pensamiento lateral y capacidad para encontrar soluciones no convencionales. Su energía vocal se eleva al describir ideas innovadoras, reflejando entusiasmo genuino por la exploración de nuevas posibilidades. Mantiene un equilibrio entre practicidad y originalidad."
+      }
+    ],
+    "bajas": [
+      {
+        "nombre": "Perseverancia",
+        "puntaje": 6,
+        "definicion": "Capacidad de mantener el esfuerzo y la determinación para alcanzar objetivos a pesar de obstáculos, fracasos o dificultades",
+        "descripcion": "Muestra determinación variable ante los desafíos prolongados",
+        "analisisDetallado": "Si bien demuestra capacidad para enfrentar obstáculos, su persistencia puede fluctuar ante desafíos sostenidos. Su tono vocal refleja cierta variabilidad en la determinación cuando describe situaciones de largo plazo."
+      },
+      {
+        "nombre": "Manejo del Estrés",
+        "puntaje": 6,
+        "definicion": "Habilidad para mantener la calma y el rendimiento efectivo bajo presión y en situaciones demandantes",
+        "descripcion": "Gestiona el estrés de manera moderada, con ocasionales signos de tensión",
+        "analisisDetallado": "Presenta una capacidad moderada para manejar situaciones de presión. Su tono vocal y ritmo muestran ligeras variaciones en momentos de tensión, aunque mantiene un nivel básico de funcionalidad."
+      },
+      {
+        "nombre": "Asertividad",
+        "puntaje": 6,
+        "definicion": "Capacidad de expresar opiniones, necesidades y límites de manera directa, honesta y respetuosa",
+        "descripcion": "Expresa sus puntos de vista de manera moderada, con ocasional indirectividad",
+        "analisisDetallado": "Muestra una capacidad moderada para expresar sus opiniones y necesidades. Su tono vocal refleja cierta cautela al momento de establecer límites o expresar desacuerdos."
+      },
+      {
+        "nombre": "Capacidad y Estilo de Liderazgo",
+        "puntaje": 6,
+        "definicion": "Habilidad para guiar, inspirar y dirigir equipos hacia el logro de objetivos organizacionales",
+        "descripcion": "Exhibe un estilo de liderazgo en desarrollo, con potencial de crecimiento",
+        "analisisDetallado": "Demuestra elementos básicos de liderazgo pero requiere desarrollo en aspectos de dirección y motivación de equipos. Su tono vocal refleja mayor confianza en roles de colaboración que de dirección."
+      },
+      {
+        "nombre": "Curiosidad y Capacidad de Aprendizaje",
+        "puntaje": 6,
+        "definicion": "Disposición activa para adquirir nuevos conocimientos, explorar ideas y adaptarse a nuevas situaciones",
+        "descripcion": "Muestra interés moderado por el aprendizaje y la exploración de nuevas ideas",
+        "analisisDetallado": "Presenta una disposición básica hacia el aprendizaje, aunque su aproximación tiende a ser más reactiva que proactiva. Su tono vocal refleja mayor entusiasmo por temas familiares que por nuevas áreas de exploración."
+      },
+      {
+        "nombre": "Tolerancia a la Frustración",
+        "puntaje": 6,
+        "definicion": "Capacidad de mantener la compostura y continuar funcionando efectivamente cuando las expectativas no se cumplen",
+        "descripcion": "Maneja la frustración de manera moderada, con ocasional impacto en su efectividad",
+        "analisisDetallado": "Demuestra una capacidad moderada para manejar situaciones frustrantes. Su tono vocal y ritmo reflejan cierta tensión al describir situaciones donde las expectativas no se cumplieron."
+      }
+    ],
+    "medias": [
+      {
+        "nombre": "Regulación Emocional",
+        "puntaje": 7,
+        "definicion": "Habilidad para reconocer, comprender y gestionar las propias emociones de manera efectiva y apropiada",
+        "descripcion": "Mantiene un control emocional adecuado en situaciones de presión",
+        "analisisDetallado": "Muestra capacidad para modular sus respuestas emocionales y mantener la compostura en situaciones desafiantes. Su tono de voz refleja estabilidad y control, aunque ocasionalmente presenta ligeras fluctuaciones en momentos de mayor intensidad emocional."
+      },
+      {
+        "nombre": "Empatía",
+        "puntaje": 7,
+        "definicion": "Capacidad de comprender y compartir los sentimientos y perspectivas de otras personas de manera genuina",
+        "descripcion": "Demuestra sensibilidad hacia las necesidades y experiencias de otros",
+        "analisisDetallado": "Exhibe una comprensión natural de las perspectivas ajenas y capacidad para adaptar su enfoque según las necesidades de otros. Su tono de voz transmite calidez y genuino interés por el bienestar de los demás."
+      },
+      {
+        "nombre": "Habilidad para Construir Relaciones",
+        "puntaje": 7,
+        "definicion": "Capacidad de establecer, mantener y desarrollar conexiones interpersonales positivas y productivas",
+        "descripcion": "Desarrolla vínculos efectivos basados en la comprensión y el respeto mutuo",
+        "analisisDetallado": "Demuestra habilidad para establecer conexiones significativas y mantener relaciones profesionales productivas. Su tono comunicativo es inclusivo y colaborativo, facilitando la construcción de puentes interpersonales."
+      },
+      {
+        "nombre": "Pensamiento Crítico y Adaptabilidad",
+        "puntaje": 7,
+        "definicion": "Capacidad de analizar información objetivamente, evaluar situaciones complejas y ajustar enfoques según nuevas circunstancias",
+        "descripcion": "Analiza situaciones de manera estructurada y adapta estrategias según el contexto",
+        "analisisDetallado": "Muestra capacidad para evaluar situaciones desde múltiples ángulos y ajustar su enfoque según las circunstancias. Su discurso refleja un proceso de pensamiento organizado y flexible."
+      },
+      {
+        "nombre": "Responsabilidad",
+        "puntaje": 7,
+        "definicion": "Capacidad de asumir las consecuencias de las propias acciones y cumplir con compromisos y obligaciones de manera confiable",
+        "descripcion": "Asume sus compromisos con seriedad y busca cumplir con las expectativas",
+        "analisisDetallado": "Demuestra un fuerte sentido de compromiso y responsabilidad en sus acciones. Su tono de voz refleja seriedad y determinación al abordar obligaciones y tareas asignadas."
+      },
+      {
+        "nombre": "Capacidad de Influencia y Comunicación",
+        "puntaje": 7,
+        "definicion": "Habilidad para transmitir ideas de manera persuasiva y movilizar a otros hacia objetivos comunes",
+        "descripcion": "Comunica ideas de manera efectiva y logra generar adhesión en otros",
+        "analisisDetallado": "Demuestra capacidad para articular ideas de manera clara y persuasiva. Su tono vocal es convincente y su ritmo discursivo facilita la comprensión y el engagement de otros."
+      }
+    ]
+  },
+  "conclusiones": {
+    "resumenFinal": "El evaluado demuestra un perfil profesional con notable capacidad de autoconocimiento y resiliencia, respaldado por una sólida creatividad en la resolución de problemas. Sus habilidades interpersonales y de regulación emocional se encuentran en un nivel adecuado, permitiéndole mantener relaciones profesionales efectivas. Las áreas que presentan mayor oportunidad de desarrollo incluyen el liderazgo, la tolerancia a la frustración y la asertividad. Su estilo comunicativo refleja autenticidad y reflexión, aunque podría beneficiarse de un mayor desarrollo en situaciones que requieren mayor firmeza y direccionalidad.",
+    "recomendacionPrincipal": "Se recomienda fortalecer las habilidades de liderazgo y asertividad a través de experiencias prácticas que requieran toma de decisiones y dirección de equipos. Complementariamente, trabajar en técnicas de manejo del estrés y tolerancia a la frustración para potenciar su efectividad en situaciones de alta presión."
+  },
+  "perfilGeneral": {
+    "metodologia": "Metodología Re-skilling.AI: Análisis Psicométrico Multimodal. Evaluación basada en análisis que combina técnicas proyectivas tradicionales con tecnología de procesamiento de lenguaje natural. Un modelo de IA especializado (LLM), entrenado en marcos teóricos de evaluación psicológica y competencias organizacionales, analiza respuestas de audio evaluando tanto contenido semántico como indicadores prosódicos (estabilidad emocional, confianza, energía vocal). Esta metodología multimodal permite identificar patrones comportamentales profundos y generar predicciones de empleabilidad con alta validez predictiva.",
+    "resumenDescriptivo": "El evaluado presenta un perfil profesional caracterizado por una notable capacidad de introspección y adaptabilidad, con particular fortaleza en el autoconocimiento y la resiliencia. Su aproximación a los desafíos demuestra creatividad y capacidad de innovación, aunque su estilo de liderazgo y asertividad están en desarrollo. En el ámbito interpersonal, mantiene un balance adecuado entre empatía y profesionalismo, con potencial para fortalecer sus habilidades de influencia y dirección de equipos. Las métricas prosódicas indican un patrón comunicativo auténtico y reflexivo, con áreas de oportunidad en situaciones que requieren mayor assertividad y manejo de presión."
+  },
+  "datosPersonales": {
+    "email": "evasquez@gasvalpo.cl",
+    "nombre": "Eladio Mauricio Vásquez Morales",
+    "fechaTest": "26 September 2025",
+    "perfilObjetivo": "Profesional en desarrollo",
+    "nombreUniversidad": "No especificada"
+  },
+  "datosGraficoRadar": {
+    "labels": [
+      "Perseverancia",
+      "Resiliencia",
+      "Pensamiento Crítico y Adaptabilidad",
+      "Regulación Emocional",
+      "Responsabilidad",
+      "Autoconocimiento",
+      "Manejo del Estrés",
+      "Asertividad",
+      "Habilidad para Construir Relaciones",
+      "Creatividad",
+      "Empatía",
+      "Capacidad de Influencia y Comunicación",
+      "Capacidad y Estilo de Liderazgo",
+      "Curiosidad y Capacidad de Aprendizaje",
+      "Tolerancia a la Frustración"
+    ],
+    "valores": {
+      "serie1": [
+        6,
+        9,
+        7,
+        7,
+        7,
+        9,
+        6,
+        6,
+        7,
+        8,
+        7,
+        7,
+        6,
+        6,
+        6
+      ]
     }
+  },
+  "analisisEmpleabilidad": {
+    "timeline": [
+      {
+        "fase": "FASE 1 (0-6 meses)",
+        "numero": 1,
+        "descripcion": "Desarrollo de habilidades fundamentales"
+      },
+      {
+        "fase": "FASE 2 (6-12 meses)",
+        "numero": 2,
+        "descripcion": "Aplicación práctica y consolidación"
+      },
+      {
+        "fase": "FASE 3 (12-18 meses)",
+        "numero": 3,
+        "descripcion": "Especialización y autonomía"
+      }
+    ],
+    "gapAnalysis": [
+      {
+        "gap": 2,
+        "actual": 7,
+        "requerido": 9,
+        "competencia": "Liderazgo"
+      },
+      {
+        "gap": 2,
+        "actual": 6,
+        "requerido": 8,
+        "competencia": "Comunicación"
+      },
+      {
+        "gap": 1,
+        "actual": 7,
+        "requerido": 8,
+        "competencia": "Resolución de problemas"
+      }
+    ],
+    "matchGeneral": 70,
+    "situacionActual": "Profesional en evaluación",
+    "timelineReadiness": "12-18 meses",
+    "fortalezasObjetivo": [
+      {
+        "nombre": "Adaptabilidad",
+        "descripcion": "Capacidad de adaptación a diferentes contextos"
+      },
+      {
+        "nombre": "Aprendizaje continuo",
+        "descripcion": "Disposición para el desarrollo profesional"
+      },
+      {
+        "nombre": "Trabajo en equipo",
+        "descripcion": "Colaboración efectiva con otros"
+      }
+    ],
+    "objetivoProfesional": "Desarrollo profesional continuo"
   }
+}
